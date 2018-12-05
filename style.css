@@ -983,3 +983,217 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+
+@import url(layouts/plugins/fontawesome.min.css);
+.text-normal {
+  font-size: 1rem; }
+
+.text-small {
+  font-size: .75rem; }
+
+.text-mid {
+  font-size: 1.2rem; }
+
+.text-large {
+  font-size: 1.5rem; }
+
+.font-grey {
+  color: #9b9a9b; }
+
+html,
+body {
+  font-family: "Palanquin", sans-serif;
+  font-size: 16px;
+  font-weight: 400; }
+
+h1, h2, h3, h4 {
+  font-weight: bold; }
+
+h4 {
+  font-size: 1.2rem; }
+
+p {
+  line-height: 1.3; }
+
+.btn-primary {
+  background-color: #008dda;
+  border-color: #008dda; }
+  .btn-primary:hover {
+    background-color: #007dc1;
+    border-color: #007dc1; }
+
+.nav-header {
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #ffffff;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); }
+  .nav-header.nav-header-clean {
+    border-bottom: none;
+    box-shadow: none; }
+  .nav-header img.brand-header {
+    width: 100px;
+    height: 40px; }
+  .nav-header nav {
+    display: flex;
+    align-content: center;
+    align-items: center; }
+    .nav-header nav a {
+      color: #022a5e; }
+      .nav-header nav a:hover {
+        color: #022a5e;
+        text-decoration: underline; }
+    .nav-header nav .sm-link {
+      color: #9b9a9b;
+      font-size: 28px; }
+      .nav-header nav .sm-link:hover {
+        color: #9b9a9b;
+        text-decoration: underline; }
+
+footer {
+  background: #022a5e;
+  padding: 40px 0; }
+  footer .footer-nav {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center; }
+    footer .footer-nav img.brand-footer {
+      width: 88px;
+      height: 40px;
+      margin-right: 50px; }
+    footer .footer-nav ul {
+      margin-bottom: 0; }
+      footer .footer-nav ul li {
+        line-height: 1;
+        margin-bottom: 5px; }
+        footer .footer-nav ul li:last-child {
+          margin-bottom: 0; }
+      footer .footer-nav ul a {
+        color: #fff;
+        font-size: .8rem; }
+      footer .footer-nav ul .sm-link-wrap {
+        margin-top: 10px; }
+        footer .footer-nav ul .sm-link-wrap .sm-link {
+          margin-right: 5px;
+          font-size: 25px; }
+
+.lp-content {
+  position: relative;
+  background-image: url("images/content-bg.jpg");
+  background-position: center top;
+  background-size: cover; }
+  .lp-content:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 10%;
+    width: 225px;
+    height: 40px;
+    background-image: url("images/content-bg-extra.png");
+    background-position: left bottom;
+    background-size: 225px 40px; }
+
+.lp-hero {
+  padding: 20px 0; }
+  .lp-hero .brand-hero {
+    width: 320px;
+    height: 126px; }
+  .lp-hero .bg-hero {
+    max-width: 100%; }
+
+.lp-section {
+  color: #022a5e; }
+  .lp-section .cont-wrap {
+    color: #9b9a9b;
+    padding: 0 20px; }
+    .lp-section .cont-wrap i {
+      font-size: 50px;
+      margin-bottom: 15px; }
+  .lp-section .panel-wrap {
+    position: relative;
+    padding: 1.25rem;
+    background: #ffffff;
+    box-shadow: 0 0 0.35rem rgba(0, 0, 0, 0.35);
+    border-radius: 4px; }
+    .lp-section .panel-wrap.panel-decor-one {
+      background-image: url("images/decor-one.png");
+      background-position: right bottom;
+      background-size: 150px 60px;
+      background-repeat: no-repeat; }
+    .lp-section .panel-wrap.panel-decor-two {
+      background-image: url("images/decor-two.png");
+      background-position: right bottom;
+      background-size: 110px 20px;
+      background-repeat: no-repeat; }
+    .lp-section .panel-wrap.panel-decor-three {
+      z-index: 1; }
+      @media (min-width: 990px) {
+        .lp-section .panel-wrap.panel-decor-three:after {
+          content: "";
+          z-index: -1;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 170px;
+          height: 75px;
+          margin-top: -75px;
+          background-image: url("images/decor-three.png");
+          background-position: right bottom;
+          background-size: 170px 75px;
+          background-repeat: no-repeat; } }
+    .lp-section .panel-wrap p {
+      margin-bottom: 5px;
+      font-size: 1.15rem;
+      color: #9b9a9b; }
+  .lp-section .panel-fade {
+    padding: 1.25rem;
+    background-color: rgba(255, 255, 255, 0.5); }
+
+.horz-img-wrap-therapy {
+  width: 100%;
+  height: 150px;
+  margin-top: 1rem;
+  background-image: url("https://image.shutterstock.com/image-photo/students-sitting-on-stairs-their-450w-255944587.jpg");
+  background-size: cover;
+  background-position: center center; }
+
+.horz-img-wrap-research {
+  width: 100%;
+  height: 150px;
+  margin-top: 1rem;
+  background-image: url("https://image.shutterstock.com/z/stock-photo-interracial-couple-talking-with-doctor-on-laptop-221875000.jpg");
+  background-size: cover;
+  background-position: center center; }
+
+.lp-testimonial {
+  min-height: 305px;
+  padding-top: 50px;
+  background-image: url("images/testimonial-bg.png");
+  background-position: left bottom;
+  background-size: 688px 300px;
+  background-repeat: no-repeat; }
+  .lp-testimonial .signature {
+    color: #9b9a9b; }
+    .lp-testimonial .signature:before {
+      content: "";
+      display: block;
+      width: 100px;
+      margin-bottom: 5px;
+      border-top: 4px solid #022a5e; }
+  .lp-testimonial .testimonial-doc {
+    max-width: 100%; }
+
+.lp-section-blue {
+  background: #008dda;
+  padding: 50px 0; }
+  .lp-section-blue p {
+    color: #ffffff;
+    font-weight: bold; }
+
+.icon-draw {
+  height: 85px; }
