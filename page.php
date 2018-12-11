@@ -38,7 +38,7 @@ get_header();
 
 		<div class="lp-section mt-5">
 			<div class="container">
-				<h2 class="text-center mb-4">Enhance your reach and resources</h2>
+				<?= get_field('blog_first_section_title'); ?>
 
 				<div class="row">
 					<div class="col-sm-12 col-md-6 mb-5">
@@ -62,7 +62,7 @@ get_header();
 
 		<div class="lp-section">
 			<div class="container">
-				<h2 class="text-center mb-4">Valuable therapy from any device</h2>
+				<?= get_field('blog_second_section_title'); ?>
 
 				<div class="row">
 					<div class="col-sm-12 col-md-4 mb-5">
@@ -90,17 +90,14 @@ get_header();
 					<div class="col-sm-12 col-md-8 offset-md-2">
 						<div class="panel-fade">
 							<div class="row">
+								<?php $testimonial = get_field('testimonial_group') ?>
 								<div class="col-sm-12 col-md-4 text-center text-md-left">
-									<img class="testimonial-doc" src="<?=get_template_directory_uri();?>/images/testimonial-doctor.png" />
+									<img class="testimonial-doc" src="<?=$testimonial['testimonial_image']['url'];?>" alt="<?= $testimonial['testimonial_image']['alt']; ?>" />
 								</div>
 								<div class="col-sm-12 col-md-8">
-									<h4>Testimonials</h4>
-									<p>
-										<strong>“What I found extraordinarily handy is that they are such a wonderful resource of expertise and lateral thinking. Sometimes I’d email them with some crazy idea, asking is it possible. And I would wake up the next morning to an email full of ideas and suggestions on how to do it.”</strong>
-									</p>
-									<p class="signature">
-										Dr. Field, Medical Center
-									</p>
+									<?= $testimonial['testimonial_title']; ?>
+									<?= $testimonial['testimonial_text']; ?>
+									<?= $testimonial['testimonial_signature']; ?>
 								</div>
 							</div>
 						</div>
@@ -113,8 +110,9 @@ get_header();
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 col-md-8 offset-md-2 text-center">
-						<p class="text-large">We reduce barriers by connecting you to mental healthcare whenever and wherever because every person matters and every illness hurts.</p>
-						<a href="#" class="btn btn-outline-light btn-lg mt-2"><b>Request Demo</b></a>
+						<?= get_field('cta_section_text'); ?>
+						<?php $cta = get_field('cta_request_demo') ?>
+						<a href="<?= $cta['url']; ?>" class="btn btn-outline-light btn-lg mt-2" target="<?= $cta['target']; ?>"><b><?= $cta['title']; ?></b></a>
 					</div>
 				</div>
 			</div>
