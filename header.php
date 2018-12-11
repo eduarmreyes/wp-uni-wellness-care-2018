@@ -46,7 +46,10 @@
 			<div class="row">
 				<div class="col-md-6">
 					<img class="brand-hero" src="<?=get_template_directory_uri();?>/images/uni-brand-color.png" />
-					<p class="text-large mt-3"><b>Connect</b> with Uni Wellness and provide telemental health designed to support life’s key transitions</p>
+					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+						<?php the_content(); ?>
+					<?php endwhile; endif; ?>					
+					<!-- <p class="text-large mt-3"><b>Connect</b> with Uni Wellness and provide telemental health designed to support life’s key transitions</p> -->
 				</div>
 				<div class="col-md-6">
 					<img class="bg-hero" src="<?=get_template_directory_uri();?>/images/hero-img.jpg" />
