@@ -44,22 +44,29 @@
 			<div class="container">
 				<?= get_field('blog_first_section_title'); ?>
 
-				<div class="row">
-					<div class="col-sm-12 col-md-6 mb-5">
-						<div class="panel-wrap text-center panel-decor-one">
-							<h4 class="mb-3">Culture of Caring</h4>
-							<p>Allow new ways for your students & faculty to connect with the right kind of therapy for them.</p>
-							<a href="" class="d-block">Learn more…</a>
-						</div>
-					</div>
+				<?php 
+					// the query
+					$the_query = new WP_Query( array(
+						'category_name' => get_field('blog_first_section_category'),
+						'posts_per_page' => 2,
+					)); 
+				?>
 
-					<div class="col-sm-12 col-md-6 mb-5">
-						<div class="panel-wrap text-center panel-decor-two">
-							<h4 class="mb-3">Access to Online Mental Health Care</h4>
-							<p>We can improve lives by meeting their social emotional needs , no matter where they are located</p>
-							<a href="" class="d-block">Learn more…</a>
-						</div>
-					</div>
+				<div class="row">
+					<?php if ( $the_query->have_posts() ) : ?>
+						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+							<div class="col-sm-12 col-md-6 mb-5">
+								<div class="panel-wrap text-center panel-decor-one">
+									<h4 class="mb-3"><?php the_title(); ?></h4>
+									<?php the_excerpt(); ?>
+									<a class="more-link" href="<?= get_permalink(); ?>">Learn more...</a>
+								</div>
+							</div>
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+					<?php else : ?>
+						<p><?php __('No New Post'); ?></p>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>
@@ -68,22 +75,44 @@
 			<div class="container">
 				<?= get_field('blog_second_section_title'); ?>
 
-				<div class="row">
-					<div class="col-sm-12 col-md-4 mb-5">
-						<div class="panel-wrap text-center panel-decor-three">
-							<h4 class="mb-3">Online Therapy</h4>
-							<p>What makes an online therapy session successful?</p>
-							<div class="horz-img-wrap-therapy"></div>
-						</div>
-					</div>
+				<?php 
+					// the query
+					$the_query = new WP_Query( array(
+						'category_name' => get_field('blog_second_section_category'),
+						'posts_per_page' => 2,
+					)); 
+				?>
 
-					<div class="col-sm-12 col-md-8 mb-2">
-						<div class="panel-wrap text-center ">
-							<h4 class="mb-3">Research suggests that our future lies in telehealth</h4>
-							<p>Now that data transmission networks are much more robust and medical legislations are gradually allowing telehealth, the infrastructure is in place to make international medicine a common practice in the future.</p>
-							<div class="horz-img-wrap-research"></div>
-						</div>
-					</div>
+				<div class="row">
+
+					<?php if ( $the_query->have_posts() ) : ?>
+						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+							<?php if ($the_query->current_post % 2 === 0): ?>
+								<div class="col-sm-12 col-md-4 mb-5">
+							<?php else: ?>
+								<div class="col-sm-12 col-md-8 mb-2">
+							<?php endif ?>
+							<?php if ($the_query->current_post % 2 === 0): ?>
+								<div class="panel-wrap text-center panel-decor-three">
+							<?php else: ?>
+								<div class="panel-wrap text-center">
+							<?php endif ?>
+									<h4 class="mb-3"><?php the_title(); ?></h4>
+									<?php the_excerpt(); ?>
+									<a class="more-link" href="<?= get_permalink(); ?>">Learn more...</a>
+									<?php if ($the_query->current_post % 2 === 0): ?>
+										<div class="horz-img-wrap-therapy"></div>
+									<?php else: ?>
+										<div class="horz-img-wrap-research"></div>
+									<?php endif ?>
+								</div>
+							</div>
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+					<?php else : ?>
+						<p><?php __('No New Discussion Post'); ?></p>
+					<?php endif; ?>
+
 				</div>
 			</div>
 		</div>
