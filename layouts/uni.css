@@ -38,7 +38,7 @@ p {
 
 .nav-header {
   padding: 1rem 1.5rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -210,3 +210,28 @@ footer {
 
 .icon-draw {
   height: 85px; }
+
+.p-b-35 {
+  padding-bottom: 35px;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.m-t-0 {
+  margin-top: 0;
+}
+
+.m-h-200 {
+  min-height: 200px;
+}
+
+.entry-header__wrapper {
+  max-width: 1400px;
+  width: 1400px;
+}
+
+.entry-header {
+  background-color: rgba(0, 0, 0, 0.075);
+}

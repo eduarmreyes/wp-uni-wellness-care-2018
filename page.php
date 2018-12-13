@@ -12,7 +12,11 @@
  * @package uni-wellness-care
  */
 
-get_header();
+	if (is_front_page()) {
+		get_header('homepage');
+	} else {
+		get_header();
+	}
 ?>
 
 	<div class="lp-content">
@@ -122,27 +126,27 @@ get_header();
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 text-center">
+						<?= get_field('') ?>
 						<h2 class="mt-2 mb-4 text-left">Uni Wellness helps remove barriers</h2>
 						<div class="panel-fade">
 							<div class="row">
-								<div class="col-sm-12 col-md-4">
-									<img class="icon-draw mb-3 mt-1" src="<?=get_template_directory_uri();?>/images/icon-implement.png" />
-									<h4>Implementing telehealth</h4>
-									<p class="font-grey text-mid">The key is to find a solution that will enable the necessary quality for a telehealth consult to look and feel nearly identical to a face-to-face inoffice appointment.</p>
-								</div>
-								<div class="col-sm-12 col-md-4">
-									<img class="icon-draw mb-3 mt-1" src="<?=get_template_directory_uri();?>/images/icon-admin.png" />
-									<h4>Talking to administration</h4>
-									<p class="font-grey text-mid">Lorem. Ipsum The key is to find a solution that will enable the necessary quality for a telehealth consult to look and feel nearly identical to a face-to-face in-office</p>
-								</div>
-								<div class="col-sm-12 col-md-4">
-									<img class="icon-draw mb-3 mt-1" src="<?=get_template_directory_uri();?>/images/icon-budget.png" />
-									<h4>Budgeting for telehealth</h4>
-									<p class="font-grey text-mid">Enhance the reach and resources your school invests in the well being of your student body</p>
-								</div>
+								<?php
+									$implementations = CFS()->get( 'implementations' );
+									foreach ( $implementations as $implementation ) { ?>
+										<div class="col-sm-12 col-md-4">
+											<img class="icon-draw mb-3 mt-1" src="<?= $implementation['image'] ?>" />
+											<?= $implementation['title'] ?>
+											<div class="font-grey text-mid">
+												<?= $implementation['content'] ?>
+											</div>
+										</div>
+									<?php
+									}
+								?>
 							</div>
 						</div>
-						<a href="#" class="btn btn-primary btn-lg mt-2 ml-auto mr-auto"><b>Offer accessible therapy</b></a>
+						<?php $cta_therapy = get_field('cta_offer_therapy') ?>
+						<a href="<?= $cta_therapy['url']; ?>" class="btn btn-primary btn-lg mt-2 ml-auto mr-auto" target="<?= $cta_therapy['target']; ?>"><b><?= $cta_therapy['title']; ?></b></a>
 					</div>
 				</div>
 			</div>
