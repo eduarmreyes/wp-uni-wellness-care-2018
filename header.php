@@ -31,7 +31,9 @@
 
 <body <?php body_class(); ?>>
 	<div class="nav-header">
-		<img class="my-0 mr-md-auto brand-header" src="<?=get_template_directory_uri();?>/images/uni-brand-color.png" />
+		<a href="<?= get_site_url(); ?>" class="my-0 mr-md-auto">
+			<img class="brand-header" src="<?=get_template_directory_uri();?>/images/uni-brand-color.png" />
+		</a>
 		<nav class="my-md-0 mr-md-2">
 			<a class="px-3 py-1" href="#">About</a>
 			<a class="px-4 py-1" href="#">Blog</a>
