@@ -622,7 +622,7 @@ a:visited {
 }
 
 a:hover, a:focus, a:active {
-	color: midnightblue;
+	color: #fff;
 }
 
 a:focus {

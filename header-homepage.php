@@ -48,7 +48,8 @@
           <img class="brand-hero" src="<?=get_template_directory_uri();?>/images/uni-brand-color.png" />
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <?php the_content(); ?>
-          <?php endwhile; endif; ?>					
+            <?= get_field('header_cta'); ?>
+          <?php endwhile; endif; ?>
         </div>
         <div class="col-md-6">
           <img class="bg-hero" src="<?=get_template_directory_uri();?>/images/hero-img.jpg" />
