@@ -23,9 +23,8 @@
 							<li><a href="#">Blog</a></li>
 							<li><a href="#">Contact Us</a></li>
 							<li class="sm-link-wrap">
-								<a class="sm-link" href="#"><i class="fab fa-facebook-square"></i></a>
-								<a class="sm-link" href="#"><i class="fab fa-twitter-square"></i></a>
-								<a class="sm-link" href="#"><i class="fab fa-slack-hash"></i></a>
+								<a class="sm-link" href="https://www.facebook.com/UniWellnessCare/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+								<a class="sm-link" href="https://twitter.com/uniwellnesscare" target="_blank"><i class="fab fa-twitter-square"></i></a>
 							</li>
 
 						</ul>

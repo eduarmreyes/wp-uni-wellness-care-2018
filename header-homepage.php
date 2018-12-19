@@ -34,9 +34,8 @@
     <nav class="ml-auto my-md-0 mr-md-2">
       <a class="px-3 py-1" href="#">About</a>
       <a class="px-4 py-1" href="#">Blog</a>
-      <a class="px-2 py-1 sm-link" href="#"><i class="fab fa-facebook-square"></i></a>
-      <a class="px-2 py-1 sm-link" href="#"><i class="fab fa-twitter-square"></i></a>
-      <a class="px-2 py-1 sm-link" href="#"><i class="fab fa-slack-hash"></i></a>
+      <a class="px-2 py-1 sm-link" href="https://www.facebook.com/UniWellnessCare/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+      <a class="px-2 py-1 sm-link" href="https://twitter.com/uniwellnesscare" target="_blank"><i class="fab fa-twitter-square"></i></a>
     </nav>
     <a class="btn btn-primary" href="#"><b>Contact Us</b></a>
   </div>
