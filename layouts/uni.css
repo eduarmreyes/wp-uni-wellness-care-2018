@@ -227,6 +227,10 @@ footer {
   margin-bottom: 0;
 }
 
+.m-b-1rem {
+  margin-bottom: 1rem;
+}
+
 .m-h-200 {
   min-height: 200px;
 }
@@ -238,4 +242,24 @@ footer {
 
 .entry-header {
   background-color: rgba(0, 0, 0, 0.075);
+}
+
+.hover-box {
+  color: #022a5e;
+}
+
+.hover-box:hover {
+  text-decoration: none;
+}
+
+.panel-wrap.panel-decor-one {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.lp-section .hover-box:hover .panel-wrap {
+  box-shadow: 0 0 1.35rem rgba(0, 0, 0, 0.35);
+}
+
+.c-blue {
+  color: royalblue !important;
 }

@@ -56,11 +56,15 @@
 					<?php if ( $the_query->have_posts() ) : ?>
 						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 							<div class="col-sm-12 col-md-6 mb-5">
-								<div class="panel-wrap text-center panel-decor-one">
-									<h4 class="mb-3"><?php the_title(); ?></h4>
-									<?php the_excerpt(); ?>
-									<a class="more-link" href="<?= get_permalink(); ?>">Learn more...</a>
-								</div>
+								<a class="hover-box" href="<?= get_permalink(); ?>">
+									<div class="panel-wrap text-center panel-decor-one">
+										<h4 class="mb-3"><?php the_title(); ?></h4>
+										<?php the_excerpt(); ?>
+										<p class="c-blue">
+											Learn more...
+										</p>
+									</div>
+								</a>
 							</div>
 						<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>
@@ -92,20 +96,21 @@
 							<?php else: ?>
 								<div class="col-sm-12 col-md-8 mb-2">
 							<?php endif ?>
-							<?php if ($the_query->current_post % 2 === 0): ?>
-								<div class="panel-wrap text-center panel-decor-three">
-							<?php else: ?>
-								<div class="panel-wrap text-center">
-							<?php endif ?>
-									<h4 class="mb-3"><?php the_title(); ?></h4>
-									<?php the_excerpt(); ?>
-									<a class="more-link" href="<?= get_permalink(); ?>">Learn more...</a>
+								<a class="hover-box more-link" href="<?= get_permalink(); ?>">
 									<?php if ($the_query->current_post % 2 === 0): ?>
-										<div class="horz-img-wrap-therapy"></div>
+										<div class="panel-wrap text-center panel-decor-three">
 									<?php else: ?>
-										<div class="horz-img-wrap-research"></div>
+										<div class="panel-wrap text-center">
 									<?php endif ?>
-								</div>
+										<h4 class="mb-3"><?php the_title(); ?></h4>
+										<?php the_excerpt(); ?>
+										<?php if ($the_query->current_post % 2 === 0): ?>
+											<div class="horz-img-wrap-therapy"></div>
+										<?php else: ?>
+											<div class="horz-img-wrap-research"></div>
+										<?php endif ?>
+									</div>
+								</a>
 							</div>
 						<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>
