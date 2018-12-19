@@ -263,3 +263,8 @@ footer {
 .c-blue {
   color: royalblue !important;
 }
+
+.c-blue:visited {
+  color: royalblue !important;
+}
+
