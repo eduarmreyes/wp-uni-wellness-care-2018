@@ -105,8 +105,18 @@
 										<h4 class="mb-3"><?php the_title(); ?></h4>
 										<?php the_excerpt(); ?>
 										<?php if ($the_query->current_post % 2 === 0): ?>
+											<style>
+												.horz-img-wrap-therapy {
+													background-image: url('<?= get_the_post_thumbnail_url(); ?>');
+												}
+											</style>
 											<div class="horz-img-wrap-therapy"></div>
 										<?php else: ?>
+											<style>
+												.horz-img-wrap-research {
+													background-image: url('<?= get_the_post_thumbnail_url(); ?>');
+												}
+											</style>
 											<div class="horz-img-wrap-research"></div>
 										<?php endif ?>
 									</div>
