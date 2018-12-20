@@ -179,7 +179,10 @@
 									foreach ( $implementations as $implementation ) { ?>
 										<div class="col-sm-12 col-md-4">
 											<img class="icon-draw mb-3 mt-1" src="<?= $implementation['image'] ?>" />
-											<?= $implementation['title'] ?>
+											</code>
+											<h4>
+												<a class='c-blue' href="<?= $implementation['title']['url'] ?>" target="<?= $implementation['title']['target'] ?>"><?= $implementation['title']['text'] ?></a>
+											</h4>
 											<div class="font-grey text-mid">
 												<?= $implementation['content'] ?>
 											</div>
