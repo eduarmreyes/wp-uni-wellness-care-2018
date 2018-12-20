@@ -28,7 +28,7 @@
 							foreach ( $fields as $field ) { ?>
 								<div class="col-sm-12 col-md-6 col-lg-3">
 									<div class="cont-wrap text-mid">
-										<i class="fas fa-<?= $field['advantage_item_icon'];?>"></i>
+										<img src="<?= $field['advantage_item_image']; ?>" alt="Icon <?= $field['advantage_item_title']; ?>">
 										<p><strong><?= $field['advantage_item_title'];?></strong></p>
 										<?= $field['advantage_item_content'];?>
 									</div>
