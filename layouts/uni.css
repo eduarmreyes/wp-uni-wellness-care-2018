@@ -268,3 +268,10 @@ footer {
   color: royalblue !important;
 }
 
+.b-b-1px {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.w-120px {
+  width: 120px;
+}

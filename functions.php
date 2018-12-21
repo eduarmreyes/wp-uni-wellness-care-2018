@@ -116,6 +116,23 @@ function uni_wellness_care_widgets_init() {
 }
 add_action( 'widgets_init', 'uni_wellness_care_widgets_init' );
 
+
+/*
+ * Set post views count using post meta
+ */
+function setPostViews($postID) {
+	$countKey = 'post_views_count';
+	$count = get_post_meta($postID, $countKey, true);
+	if($count==''){
+			$count = 0;
+			delete_post_meta($postID, $countKey);
+			add_post_meta($postID, $countKey, '0');
+	}else{
+			$count++;
+			update_post_meta($postID, $countKey, $count);
+	}
+}
+
 /**
  * Enqueue scripts and styles.
  */
