@@ -275,3 +275,16 @@ footer {
 .w-120px {
   width: 120px;
 }
+
+.menu-item {
+  padding: 0.25rem 1rem;
+}
+
+.current-menu-item a {
+  color: #008DDA !important;
+  font-weight: 700;
+}
+
+.f-bold {
+  font-weight: 600;
+}

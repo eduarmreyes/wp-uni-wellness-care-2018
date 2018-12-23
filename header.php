@@ -35,10 +35,29 @@
 			<img class="brand-header" src="<?=get_template_directory_uri();?>/images/uni-brand-color.png" />
 		</a>
 		<nav class="my-md-0 mr-md-2">
-			<a class="px-3 py-1" href="#">About</a>
-			<a class="px-4 py-1" href="#">Blog</a>
-			<a class="px-2 py-1 sm-link" href="https://www.facebook.com/UniWellnessCare/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-			<a class="px-2 py-1 sm-link" href="https://twitter.com/uniwellnesscare" target="_blank"><i class="fab fa-twitter-square"></i></a>
+      <?php
+        $menu_args = array(
+          'container' => false,
+          'menu' => 'landing navigation',
+          'menu_class' => 'd-flex align-items-center m-0 p-0 list-unstyled'
+        );
+        wp_nav_menu($menu_args);
+      ?>
+			<?php
+				$menu_options = wp_get_nav_menu_items('landing social navigation');
+				foreach ((array) $menu_options as $menu) {
+					?>
+					<a class="px-2 py-1 sm-link" href="<?= $menu->url; ?>" target="<?= $menu->target; ?>"><i class="fab fa-<?= $menu->title; ?>"></i></a>
+					<?php
+				}
+				?>
 		</nav>
-		<a class="btn btn-primary" href="#">Contact Us</a>
+		<?php
+      $contact_us_menu = wp_get_nav_menu_items('contact us');
+			foreach ((array) $contact_us_menu as $menu) {
+				?>
+				<a class="<?= implode(" ", $menu->classes); ?>" href="<?= $menu->url; ?>"><?= $menu->title; ?></a>
+				<?php
+			}
+		?>
 	</div>
