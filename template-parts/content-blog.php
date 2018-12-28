@@ -60,9 +60,15 @@
                   ?>
                     <a href="https://example.com">
                       <article class="d-flex align-items-center b-b-1px">
-                        <figure class="most-read__figure my-3 mr-3 w-120px">
-                          <img src="http://localhost/uni/wp-content/uploads/2018/12/shutterstock_255944587_V2.jpg" alt="Article image ">
-                        </figure>
+                        <?php
+                          if (has_post_thumbnail()) {
+                        ?>
+                            <figure class="most-read__figure my-3 mr-3 w-120px">
+                              <?php the_post_thumbnail(); ?>
+                            </figure>
+                        <?php
+                          }
+                        ?>
                         <h4>
                           <?php the_title(); ?>
                         </h4>

@@ -172,8 +172,9 @@ footer {
   height: 150px;
   margin-top: 1rem;
   background-image: url("https://image.shutterstock.com/image-photo/students-sitting-on-stairs-their-450w-255944587.jpg");
-  background-size: cover;
-  background-position: center center; }
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat; }
 
 .horz-img-wrap-research {
   width: 100%;
