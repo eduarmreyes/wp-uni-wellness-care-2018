@@ -181,7 +181,8 @@ footer {
   height: 150px;
   margin-top: 1rem;
   background-image: url("https://image.shutterstock.com/z/stock-photo-interracial-couple-talking-with-doctor-on-laptop-221875000.jpg");
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center center; }
 
 .lp-testimonial {
