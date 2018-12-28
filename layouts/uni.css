@@ -290,3 +290,11 @@ footer {
 .f-bold {
   font-weight: 600;
 }
+
+.hovered-opacity-off a:hover {
+  opacity: 0.8;
+}
+
+.no-decoration a:hover {
+  text-decoration: none;
+}

@@ -18,7 +18,7 @@
 				<div class="col-12">
 					<div class="footer-nav">
 						<img class="brand-footer" src="<?=get_template_directory_uri();?>/images/uni-brand-white.png" />
-						<ul class="list-unstyled">
+						<ul class="list-unstyled hovered-opacity-off no-decoration">
 							<li><a href="#">About Us</a></li>
 							<li><a href="#">Blog</a></li>
 							<li><a href="#">Contact Us</a></li>
