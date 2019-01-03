@@ -30,11 +30,21 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<div class="nav-header nav-header-clean collapse navbar-homepage justify-content-end" id='navbarHeader'>
+    <?php
+      $menu_args = array(
+        'container' => false,
+        'menu' => 'landing navigation',
+        'menu_class' => 'd-flex align-items-center m-0 p-0 list-unstyled'
+      );
+      wp_nav_menu($menu_args);
+    ?>
+  </div>
 	<div class="nav-header">
 		<a href="<?= get_site_url(); ?>" class="my-0 mr-md-auto">
 			<img class="brand-header" src="<?=get_template_directory_uri();?>/images/uni-brand-color.png" />
 		</a>
-		<nav class="my-md-0 mr-md-2">
+		<nav class="my-md-0 mr-md-2 d-none d-sm-flex">
       <?php
         $menu_args = array(
           'container' => false,
@@ -52,12 +62,17 @@
 				}
 				?>
 		</nav>
-		<?php
-      $contact_us_menu = wp_get_nav_menu_items('contact us');
-			foreach ((array) $contact_us_menu as $menu) {
-				?>
-				<a class="<?= implode(" ", $menu->classes); ?>" href="<?= $menu->url; ?>"><?= $menu->title; ?></a>
-				<?php
-			}
-		?>
+    <div class="contact-us__wrapper">
+      <?php
+        $contact_us_menu = wp_get_nav_menu_items('contact us');
+        foreach ((array) $contact_us_menu as $menu) {
+          ?>
+          <a class="<?= implode(" ", $menu->classes); ?>" href="<?= $menu->url; ?>"><?= $menu->title; ?></a>
+          <?php
+        }
+      ?>
+      <button class="navbar-toggler d-inline-block d-sm-none" data-toggle="collapse" data-target="#navbarHeader">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
 	</div>

@@ -24,7 +24,7 @@
 			while ( have_posts() ) :
 				the_post();
 
-				get_template_part( 'template-parts/content', strtolower(get_the_title()) );
+				get_template_part( 'template-parts/content', str_replace( ' ', '-', strtolower( get_the_title() ) ) );
 
 			endwhile; // End of the loop.
 		?>

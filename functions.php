@@ -140,6 +140,10 @@ function uni_wellness_care_scripts() {
 	wp_enqueue_style( 'uni-wellness-care-style-reset', get_stylesheet_uri() );
 	wp_enqueue_style( 'uni-wellness-care-style', get_template_directory_uri() . '/layouts/uni.css' );
 
+	wp_enqueue_script( 'uni-wellness-care-jQuery', 'https://code.jquery.com/jquery-3.3.1.min.js', array(), '', true );
+
+	wp_enqueue_script( 'uni-wellness-care-bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js', array(), '', true );
+
 	wp_enqueue_script( 'uni-wellness-care-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'uni-wellness-care-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
