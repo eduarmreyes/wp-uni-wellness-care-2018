@@ -19,7 +19,7 @@
 	}
 ?>
 
-	<div class="lp-content">
+	<div class="lp-content content__<?= str_replace( ' ', '-', strtolower( get_the_title() ) ) ?>">
 		<?php
 			while ( have_posts() ) :
 				the_post();
