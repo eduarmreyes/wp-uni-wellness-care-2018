@@ -30,16 +30,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<div class="nav-header nav-header-clean collapse navbar-homepage justify-content-end" id='navbarHeader'>
-    <?php
-      $menu_args = array(
-        'container' => false,
-        'menu' => 'landing navigation',
-        'menu_class' => 'd-flex align-items-center m-0 p-0 list-unstyled'
-      );
-      wp_nav_menu($menu_args);
-    ?>
-  </div>
 	<div class="nav-header">
 		<a href="<?= get_site_url(); ?>" class="my-0 mr-md-auto">
 			<img class="brand-header" src="<?=get_template_directory_uri();?>/images/uni-brand-color.png" />
@@ -76,3 +66,13 @@
       </button>
     </div>
 	</div>
+	<div class="nav-header nav-header-clean collapse navbar-homepage justify-content-end" id='navbarHeader'>
+    <?php
+      $menu_args = array(
+        'container' => false,
+        'menu' => 'landing navigation',
+        'menu_class' => 'd-flex align-items-center m-0 p-0 list-unstyled'
+      );
+      wp_nav_menu($menu_args);
+    ?>
+  </div>

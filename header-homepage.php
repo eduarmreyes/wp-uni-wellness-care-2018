@@ -30,16 +30,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <div class="nav-header nav-header-clean collapse navbar-homepage justify-content-end" id='navbarHeader'>
-    <?php
-      $menu_args = array(
-        'container' => false,
-        'menu' => 'landing navigation',
-        'menu_class' => 'd-flex align-items-center m-0 p-0 list-unstyled'
-      );
-      wp_nav_menu($menu_args);
-    ?>
-  </div>
   <div class="nav-header nav-header-clean">
     <nav class="ml-auto my-md-0 mr-md-2 d-none d-sm-flex">
       <?php
@@ -72,6 +62,16 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     </div>
+  </div>
+  <div class="nav-header nav-header-clean collapse navbar-homepage justify-content-end" id='navbarHeader'>
+    <?php
+      $menu_args = array(
+        'container' => false,
+        'menu' => 'landing navigation',
+        'menu_class' => 'd-flex align-items-center m-0 p-0 list-unstyled'
+      );
+      wp_nav_menu($menu_args);
+    ?>
   </div>
 
   <div class="lp-hero">
