@@ -617,7 +617,7 @@ a {
 	color: royalblue;
 }
 
-a:visited {
+.home a:visited {
 	color: #fff;
 }
 
