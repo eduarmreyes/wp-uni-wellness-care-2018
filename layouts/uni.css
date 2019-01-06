@@ -55,9 +55,9 @@ p {
     display: flex;
     align-content: center;
     align-items: center; }
-    .nav-header nav a {
+    .nav-header nav ul a {
       color: #022a5e; }
-      .nav-header nav a:hover {
+      .nav-header nav ul a:hover, .nav-header nav ul a:visited {
         color: #022a5e;
         text-decoration: underline; }
     .nav-header nav .sm-link {
