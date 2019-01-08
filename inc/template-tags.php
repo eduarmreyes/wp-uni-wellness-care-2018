@@ -126,8 +126,8 @@ if ( ! function_exists( 'uni_wellness_care_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<div class="post-thumbnail">
-				<?php the_post_thumbnail(); ?>
+			<div class="post-thumbnail d-flex justify-content-center">
+				<?php the_post_thumbnail('medium-large', ['class' => 'img-fluid']); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>

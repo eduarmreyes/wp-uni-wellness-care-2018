@@ -17,14 +17,29 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="footer-nav">
-							<img class="brand-footer" src="<?=get_template_directory_uri();?>/images/uni-brand-white.png" />
+							<a href="<?= get_site_url(); ?>">
+								<img class="brand-footer" src="<?=get_template_directory_uri();?>/images/uni-brand-white.png" />
+							</a>
 							<ul class="list-unstyled hovered-opacity-off no-decoration">
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">Contact Us</a></li>
+								<?php
+									$menu_options = wp_get_nav_menu_items('landing navigation footer');
+									foreach ((array) $menu_options as $menu) {
+										?>
+										<li>
+											<a href="<?= $menu->url; ?>" target="<?= $menu->target; ?>"><?= $menu->title; ?></a>
+										</li>
+										<?php
+									}
+								?>
 								<li class="sm-link-wrap">
-									<a class="sm-link" href="https://www.facebook.com/UniWellnessCare/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-									<a class="sm-link" href="https://twitter.com/uniwellnesscare" target="_blank"><i class="fab fa-twitter-square"></i></a>
+									<?php
+										$menu_options = wp_get_nav_menu_items('landing social navigation');
+										foreach ((array) $menu_options as $menu) {
+											?>
+											<a class="sm-link" href="<?= $menu->url; ?>" target="<?= $menu->target; ?>"><i class="fab fa-<?= $menu->title; ?>"></i></a>
+											<?php
+										}
+									?>
 								</li>
 
 							</ul>
