@@ -30,8 +30,8 @@ p {
   line-height: 1.3; }
 
 .btn-primary {
-  background-color: #008dda;
-  border-color: #008dda; }
+  background-color: #007bff;
+  border-color: #007bff; }
   .btn-primary:hover {
     background-color: #007dc1;
     border-color: #007dc1; }
@@ -374,10 +374,21 @@ footer {
   margin-top: 0;
 }
 
+.contact-us__wrapper .btn.btn-primary.f-bold {
+  padding: .45rem .75rem;
+  margin-top: -3px;
+}
+
 @media (min-width: 576px) {
   .contact-us__wrapper {
     margin-left: initial;
   }
+  
+  .contact-us__wrapper .btn.btn-primary.f-bold {
+    padding: .375rem .75rem;
+    margin-top: initial;
+  }
+
   .mt-sm-minus-2px {
     margin-top: 0;
   }
