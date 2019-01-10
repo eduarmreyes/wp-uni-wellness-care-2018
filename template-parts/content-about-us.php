@@ -64,20 +64,20 @@
 </div>
 <div class="lp-section mt-5">
   <div class="container">
-    <div class="row">
+    <div class="row mb-4">
       <div class="col-12">
         <?= get_field('the_team_title') ?>
       </div>
     </div>
     <div class="row">
-      <div class="col-12 col-md-8 ml-auto d-flex justify-content-around mb-4">
+      <div class="col-12 col-md-8 ml-auto d-block d-sm-flex justify-content-between mb-4">
         <?php
           $i = 0;
           $fields = CFS()->get( 'team' );
           foreach ( $fields as $key => $field ) { ?>
-            <div class="card w-45-locked">
-              <img src="<?= $field['image'] ?>" alt="Team Member Image" width='150px' class='img-fluid rounded-circle mt-4 ml-4'>
-              <div class="card-body">
+            <div class="card w-48-sm-locked mb-4">
+              <div class="card-body d-grid d-sm-block gt-columns-150px-auto gt-rows-75px-75px-auto team-card__body">
+                <img src="<?= $field['image'] ?>" alt="Team Member Image" width='150px' class='img-fluid rounded-circle mt-sm-4 ml-sm-4 gc-start-1 gc-end-2 gr-start-1 gr-end-3'>
                 <?= $field['information'] ?>
               </div>
             </div> <!-- card-<?= $i ?> -->
@@ -85,7 +85,7 @@
               if ($i % 2 > 0) {
             ?>
               </div>
-              <div class="col-12 col-md-8 ml-auto d-flex justify-content-around mb-4">
+              <div class="col-12 col-md-8 ml-auto d-block d-sm-flex justify-content-between mb-4">
             <?php } ?>
         <?php $i++; } ?>
       </div>
