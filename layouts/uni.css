@@ -423,6 +423,20 @@ footer {
   margin-top: 1rem;
 }
 
+.img-border {
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.content__about-us .lp-testimonial {
+  background-image: url("../images/uni-cellphones.png");
+  background-position: 50% 35vh;
+  background-size: 350px 130px;
+}
+
+.mt-6 {
+  margin-top: 65px;
+}
+
 @media (min-width: 576px) {
   .contact-us__wrapper {
     margin-left: initial;
@@ -432,11 +446,11 @@ footer {
     padding: .375rem .75rem;
     margin-top: initial;
   }
-
+  
   .mt-sm-minus-2px {
     margin-top: 0;
   }
-
+  
   .w-48-sm-locked {
     min-width: 48%;
     width: 48%;
@@ -444,5 +458,11 @@ footer {
   
   .team-card__body h3 {
     margin-left: 0;
+  }
+
+  .content__about-us .lp-testimonial {
+    background-image: url("../images/testimonial-bg.png");
+    background-position: left bottom;
+    background-size: 688px 300px;
   }
 }
