@@ -429,8 +429,8 @@ footer {
 
 .content__about-us .lp-testimonial {
   background-image: url("../images/uni-cellphones.png");
-  background-position: 50% 35vh;
-  background-size: 350px 130px;
+  background-position: 50%;
+  background-size: auto;
 }
 
 .mt-6 {
