@@ -374,7 +374,7 @@ footer {
   margin-top: -3px;
 }
 
-.d-grid {
+/* .d-grid {
   display: grid;
 }
 
@@ -400,24 +400,24 @@ footer {
 
 .gr-end-3 {
   grid-row-end: 3;
-}
+} */
 
 .team-card__body {
   box-shadow: 0 0 .35rem rgba(0, 0, 0, 0.35);
 }
 
 .team-card__body h3 {
-  margin-left: 20px;
+  text-align: center;
 }
 
-.team-card__body h3:first-of-type {
+/* .team-card__body h3:first-of-type {
   align-self: flex-end;
 }
 
 .team-card__body p {
   grid-column-start: 1;
   grid-column-end: 3;
-}
+} */
 
 .team-card__body p:first-of-type {
   margin-top: 1rem;

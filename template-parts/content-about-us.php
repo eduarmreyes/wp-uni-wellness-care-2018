@@ -77,7 +77,7 @@
           foreach ( $fields as $key => $field ) { ?>
             <div class="card w-48-sm-locked mb-4">
               <div class="card-body d-grid d-sm-block gt-columns-150px-auto gt-rows-75px-75px-auto team-card__body">
-                <img src="<?= $field['image'] ?>" alt="Team Member Image" width='150px' class='img-fluid rounded-circle mt-sm-4 ml-sm-4 gc-start-1 gc-end-2 gr-start-1 gr-end-3 img-border'>
+                <img src="<?= $field['image'] ?>" alt="Team Member Image" width='150px' class='img-fluid rounded-circle d-block m-auto'>
                 <?= $field['information'] ?>
               </div>
             </div> <!-- card-<?= $i ?> -->
