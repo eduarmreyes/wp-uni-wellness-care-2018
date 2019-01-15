@@ -58,7 +58,7 @@
                 while ($recommended_query->have_posts()) :
                   $recommended_query->the_post();
                   ?>
-                    <a href="https://example.com">
+                    <a href="<?= get_permalink( get_option( 'page_for_posts' ) ) ?>">
                       <article class="d-flex align-items-center b-b-1px">
                         <?php
                           if (has_post_thumbnail()) {
