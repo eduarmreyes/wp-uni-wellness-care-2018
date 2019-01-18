@@ -319,7 +319,7 @@ footer {
 }
 
 .bg-blue {
-  background-color: #007dc1;
+  background-color: #008dda;
 }
 
 .c-white {
@@ -435,6 +435,21 @@ footer {
 
 .mt-6 {
   margin-top: 65px;
+}
+
+.btn-outline-white {
+  color: #fff;
+  background-color: transparent;
+  background-image: none;
+  border-color: #fff;
+}
+
+.bw-2 {
+  border-width: 2px;
+}
+
+.bw-0 {
+  border-width: 0;
 }
 
 @media (min-width: 576px) {
