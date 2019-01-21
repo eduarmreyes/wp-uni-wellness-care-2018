@@ -11,7 +11,7 @@
           <input type="hidden" name="enable303Redirect" value="0">
           <div class="form-row">
             <div class="col-md-7">
-              <input type="email" class="far form-control bw-0 no-focus" placeholder="&#xf0e0;  Your email" aria-label="Your email" aria-describedby="basic-addon1" name="q4_email" size="51">
+              <input type="email" class="far form-control bw-0 no-focus" placeholder="&#xf0e0;  Your email" aria-label="Your email" aria-describedby="basic-addon1" name="q4_email" size="51" required>
             </div>
             <div class="col-md-5">
               <button class="btn btn-outline-white btn-lg btn-block bw-2">Subscribe</button>
