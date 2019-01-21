@@ -29,6 +29,13 @@
 			endwhile; // End of the loop.
 		?>
 	</div>
+
+	<?php
+		if (str_replace(' ', '-', strtolower( get_the_title() )) == "home") {
+			get_template_part( 'template-parts/shared',  'subscribe' );
+		}
+	?>
+
 <?php
 // get_sidebar();
 get_footer();
