@@ -13,7 +13,7 @@
 	<header class="entry-header m-h-200 d-flex justify-content-center align-items-center">
 		<div class="entry-header__wrapper">
 			<div class="container">
-				<a class="f-bold ml-negative-2rem" href="https://example.com">
+				<a class="f-bold ml-negative-2rem" href="<?= get_permalink( get_page_by_title( 'Blog' ) ) ?>">
 					&#60; Go back
 				</a>
 				<?php
