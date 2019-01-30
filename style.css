@@ -715,6 +715,7 @@ a:hover, a:active {
 .post-navigation .nav-previous {
 	float: left;
 	width: 50%;
+	font-weight: 600;
 }
 
 .comment-navigation .nav-next,
@@ -723,6 +724,7 @@ a:hover, a:active {
 	float: right;
 	text-align: right;
 	width: 50%;
+	font-weight: 600;
 }
 
 /*--------------------------------------------------------------

@@ -452,6 +452,10 @@ footer {
   border-width: 0;
 }
 
+.ml-negative-2rem {
+  margin-left: -2rem;
+}
+
 @media (min-width: 576px) {
   .contact-us__wrapper {
     margin-left: initial;

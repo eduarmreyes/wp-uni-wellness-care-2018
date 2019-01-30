@@ -12,22 +12,27 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class("p-b-35"); ?>>
 	<header class="entry-header m-h-200 d-flex justify-content-center align-items-center">
 		<div class="entry-header__wrapper">
-			<?php
-			if ( is_singular() ) :
-				the_title( '<h1 class="container entry-title m-t-0">', '</h1>' );
-				else :
-					the_title( '<h2 class="container entry-title m-t-0"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-				endif;
-				
-				if ( 'post' === get_post_type() ) :
-					?>
-				<div class="container entry-meta">
-					<?php
-					uni_wellness_care_posted_on();
-					uni_wellness_care_posted_by();
-					?>
-				</div><!-- .entry-meta -->
-			<?php endif; ?>
+			<div class="container">
+				<a class="f-bold ml-negative-2rem" href="https://example.com">
+					&#60; Go back
+				</a>
+				<?php
+					if ( is_singular() ) :
+						the_title( '<h1 class="entry-title m-t-0">', '</h1>' );
+						else :
+							the_title( '<h2 class="entry-title m-t-0"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+						endif;
+						
+						if ( 'post' === get_post_type() ) :
+							?>
+					<div class="entry-meta">
+						<?php
+						uni_wellness_care_posted_on();
+						uni_wellness_care_posted_by();
+						?>
+					</div><!-- .entry-meta -->
+				<?php endif; ?>
+			</div>
 		</div>
 	</header><!-- .entry-header -->
 
@@ -55,6 +60,19 @@
 			) );
 			?>
 		</div><!-- .entry-content -->
-	</div>
+		<?php
+			the_post_navigation(
+				array (
+					'prev_text'                  => __( '&#60; Previous post' ),
+					'next_text'                  => __( 'Next post &#62;' ),
+				)
+			);
+		?>
+
+</div>
 
 </article><!-- #post-<?php the_ID(); ?> -->
+
+<?php
+	get_template_part( 'template-parts/shared',  'subscribe' );
+?>

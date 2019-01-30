@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-8 offset-md-2 text-center">
-        <?= the_field('subscribe_title') ?>
+        <?= (get_field('subscribe_title')) ? the_field('subscribe_title') : "<p class='text-large'>Stay on top of the latest news</p>" ; ?>
         <form action="https://app.hatchbuck.com/onlineForm/submit.php" method="post" name="form_90203652666" accept-charset="utf-8" class="form justify-conten-center alig-items-center">
           <input type="hidden" name="formID" value="90203652666">
           <input type="hidden" name="enableServerValidation" value="1">
@@ -13,7 +13,7 @@
             </div>
             <div class="col-md-5">
               <button class="btn btn-outline-white btn-lg btn-block bw-2">
-                <?= the_field('subscribe_cta') ?>
+                <?= (get_field('subscribe_cta')) ? the_field('subscribe_cta') : "Subscribe" ; ?>
               </button>
             </div>
           </div>
