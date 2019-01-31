@@ -456,32 +456,45 @@ footer {
   margin-left: -2rem;
 }
 
+.btn-xl {
+  padding: .5rem 2rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: .3rem;
+}
+
 @media (min-width: 576px) {
   .contact-us__wrapper {
     margin-left: initial;
   }
-  
+
   .contact-us__wrapper .btn.btn-primary.f-bold {
     padding: .375rem .75rem;
     margin-top: initial;
   }
-  
+
   .mt-sm-minus-2px {
     margin-top: 0;
   }
-  
+
   .w-48-sm-locked {
     min-width: 48%;
     width: 48%;
   }
-  
+
   .team-card__body h3 {
     margin-left: 0;
   }
-
+  
   .content__about-us .lp-testimonial {
     background-image: url("../images/testimonial-bg.png");
     background-position: left bottom;
     background-size: 688px 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .justify-md-content-end {
+    justify-content: flex-end;
   }
 }
