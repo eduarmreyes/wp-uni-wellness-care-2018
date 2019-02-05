@@ -46,7 +46,7 @@
           <?php else : ?>
             <p><?php __('No New Post'); ?></p>
           <?php endif; ?>
-        
+
         </div>
       </div>
       <div class="col-sm-12 col-md-4 mb-6">
@@ -54,17 +54,18 @@
           <div class="col-12">
             <div class="bg-blue px-3 py-4 rounded">
               <?= the_field('subscribe_title') ?>
-              <form action="https://app.hatchbuck.com/onlineForm/submit.php" method="post" name="form_90203652666" accept-charset="utf-8">
+              <form action="https://app.hatchbuck.com/onlineForm/submit.php" method="post" name="form_90203652666" id="hatchbuck_scroll-box" accept-charset="utf-8">
                 <input type="hidden" name="formID" value="90203652666">
                 <input type="hidden" name="enableServerValidation" value="1">
                 <input type="hidden" name="enable303Redirect" value="0">
                 <div class="input-group mb-3">
-                  <input type="email" class="far form-control bw-0 no-focus" placeholder="&#xf0e0;  Your email" aria-label="Your email" aria-describedby="basic-addon1" name="q4_email" size="51" required>
+                  <input type="email" class="far form-control bw-0 no-focus" placeholder="&#xf0e0;  Your email" aria-label="Your email" aria-describedby="basic-addon1" name="email" size="51" required>
                 </div>
                 <button class="btn btn-outline-white btn-lg btn-block bw-2">
                   <?= the_field('subscribe_cta') ?>
                 </button>
-                <!-- <input type="email" id="input_4" name="q4_email" size="51"> -->
+                <div class="hb_div p-0 mt-3" id="hatchbuck_scroll-box_result"></div>
+                <!-- <input type="email" id="input_4" name="email" size="51"> -->
                 <!-- <button type="submit" style="white-space:nowrap;">Submit Form</button> -->
                 <li style="display:none">Should be Empty: <input type="hidden" name="website" value=""></li>
                 <input type="hidden" id="simple_spc" name="simple_spc" value="90203652666-90203652666">
@@ -110,3 +111,43 @@
     </div>
   </div>
 </div> <!-- ./lp-section -->
+
+<script>
+  jQuery(document).on('ready', function() {
+    jQuery('#hatchbuck_scroll-box').on('submit', function(e) {
+      e.preventDefault();
+      jQuery.ajax({
+        type: "POST",
+        data : jQuery("#hatchbuck_scroll-box").serialize(),
+        cache: false,
+        url: "https://uniwellnesscare.com/wp-admin/admin-ajax.php?action=HatchbuckScrollBox",
+        // url: "http://localhost/uni/wp-admin/admin-ajax.php?action=HatchbuckScrollBox",
+        success: function(data) {
+          jQuery("#hatchbuck_scroll-box_result").css( "display", "block");
+          jQuery("#hatchbuck_scroll-box_result").height(70);
+          jQuery("#hatchbuck_scroll-box_result").html(data);
+          // p tag return from Ajax file
+
+          jQuery("#hatchbuck_scroll-box_result").delay(3000).fadeOut( "slow" );
+
+          setTimeout(function() {
+            jQuery("#hatchbuck_scroll-box_result").height(0);
+            jQuery('#hatchbuck_scroll-box').find('input').val('');
+            jQuery('#hatchbuck_scroll-box').find('input').val('');
+          }, 4000);
+        },
+        error: function(data) {
+          jQuery("#hatchbuck_scroll-box_result").css( "display", "block");
+          jQuery("#hatchbuck_scroll-box_result").height(70);
+          jQuery("#hatchbuck_scroll-box_result").html(data);
+          // p tag return from Ajax file
+          setTimeout(function() {
+            jQuery("#hatchbuck_scroll-box_result").height(0);
+            jQuery('#hatchbuck_scroll-box').find('input').val('');
+            jQuery('#hatchbuck_scroll-box').find('input').val('');
+          }, 4000);
+        }
+      });
+    });
+  });
+</script>
