@@ -10,6 +10,11 @@
  */
 
 ?>
+		<script>
+			jQuery(document).on('ready', function() {
+				jQuery('#hatchbuck-slider').hide();
+			});
+		</script>
 
 		<!-- </div>#content -->
 		<footer>

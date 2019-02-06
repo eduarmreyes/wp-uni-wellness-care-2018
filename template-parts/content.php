@@ -61,12 +61,14 @@
 			?>
 		</div><!-- .entry-content -->
 		<?php
-			the_post_navigation(
-				array (
-					'prev_text'  => __( '&#60; Previous post' ),
-					'next_text'  => __( 'Next post &#62;' ),
-				)
-			);
+			if (str_replace(' ', '-', strtolower( get_the_title() )) != "contact-us!") {
+				the_post_navigation(
+					array (
+						'prev_text'  => __( '&#60; Previous post' ),
+						'next_text'  => __( 'Next post &#62;' ),
+					)
+				);
+			}
 		?>
 
 </div>
@@ -74,7 +76,9 @@
 </article><!-- #post-<?php the_ID(); ?> -->
 
 <?php
-	get_template_part( 'template-parts/shared',  'about-us' );
+	if (str_replace(' ', '-', strtolower( get_the_title() )) != "contact-us!") {
+		get_template_part( 'template-parts/shared',  'about-us' );
+	}
 ?>
 
 <?php
