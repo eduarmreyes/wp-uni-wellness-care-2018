@@ -13,10 +13,14 @@
 	<header class="entry-header m-h-200 d-flex justify-content-center align-items-center">
 		<div class="entry-header__wrapper">
 			<div class="container">
-				<a class="f-bold ml-negative-2rem" href="<?= get_permalink( get_page_by_title( 'Blog' ) ) ?>">
-					&#60; Go back
-				</a>
 				<?php
+					if (str_replace(' ', '-', strtolower( get_the_title() )) != "contact-us!") {
+				?>
+					<a class="f-bold ml-negative-2rem" href="<?= get_permalink( get_page_by_title( 'Blog' ) ) ?>">
+						&#60; Go back
+					</a>
+				<?php
+					}
 					if ( is_singular() ) :
 						the_title( '<h1 class="entry-title m-t-0">', '</h1>' );
 						else :
