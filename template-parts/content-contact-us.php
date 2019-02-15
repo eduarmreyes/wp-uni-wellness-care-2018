@@ -36,7 +36,7 @@
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <p>Thank you for subscribing.</p>
+            <p>Thank you for contacting us.</p>
           </div>
           <?php
         }
