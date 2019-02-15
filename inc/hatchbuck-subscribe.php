@@ -42,19 +42,16 @@
 		return $response;
 	}
 
-	function subscribe($opts, $email, $fname, $lname, $title, $company, $phone_number) {
-    $api_key     = $opts['api_key'];
-    $tags_key    = $opts['tags_key'];
-    $api_url     = "https://api.hatchbuck.com/api/v1/contact/";
+	function subscribe($opts, $email, $fname, $lname) {
+    $api_key    = $opts['api_key'];
+    $tag_key    = $opts['tag_key'];
+    $api_url    = "https://api.hatchbuck.com/api/v1/contact/";
 
 		$data = array( 'emails' => array(array('address' => $email,'type'  => 'Work')),'status' => array('name' => 'Lead'));	
     if(!empty($fname)) $data['firstName'] = $fname;
 		if(!empty($lname)) $data['lastName'] = $lname;
-		if(!empty($title)) $data['title'] = $title;
-		if(!empty($company)) $data['company'] = $company;
-		$data['phones'] = array("number" => "(239) 628-9209");
 		$data = json_encode($data);
-
+        
     try {
       $result = remote_post($api_url . '?api_key='. $api_key, 
         $data                         
@@ -68,7 +65,7 @@
 			$result = json_decode($result['body']);
 			$contactId  = $result->contactId;
       try {
-        $info = json_encode($tags_key);
+        $info = json_encode(array(array('id' => $tag_key)));
 
         $result = remote_post(                            
           $api_url . $contactId . '/tags?api_key='. $api_key, 
@@ -96,37 +93,17 @@
 		return "Invalid response from server";
 	}
 
-	$api_key = "ajFBejUxX1ZCTE1BYjVQNi1UemwtaUxxU0g1YnFoa3JZaEFEdUJLUThUWTE1";
-	$tags_key = array(
-		array('id' => "Sm9meEpLbUt2U0ZIczhVZ3B6U21FeDdBMGlKUkZ4MlAwdHo4aUJ2alVWMDE1"), // UWC_emaillist
-	);
-	if ($_POST["contact"]) {
-		array_push($tags_key, array('id' => "azJ6bTRxZGxEbDZsMzZfcGxZNC1RM3Bic095dlVpYWtIRXZBR1hudWp3TTE1")); // UniW_Demo
-	}
+  $api_key = "ajFBejUxX1ZCTE1BYjVQNi1UemwtaUxxU0g1YnFoa3JZaEFEdUJLUThUWTE1";
+  $tag_key = "Sm9meEpLbUt2U0ZIczhVZ3B6U21FeDdBMGlKUkZ4MlAwdHo4aUJ2alVWMDE1";
   $api_url = 'https://api.hatchbuck.com/api/v1/contact/';
 	$opts['api_key']    = $api_key;
-	$opts['tags_key']    = $tags_key;
-	$phone_number = $_POST["phone_number"];
-	// if ($phone_number) {
-	// 	$numbers = explode("\n", $_POST["phone_number"]);
-
-	// 	foreach($numbers as $number) {
-	// 		$phone_number = preg_replace('~.*(\d{3})[^\d]{0,7}(\d{3})[^\d]{0,7}(\d{4}).*~', '($1) $2-$3', $number);
-	// 	}
-	// }
-	$result = subscribe(
-		$opts,
-		$_POST["email"],
-		$_POST["first_name"],
-		$_POST["last_name"],
-		$_POST["title"],
-		$_POST["company"],
-		$phone_number
-	); // Return 1 if everything successfull
-
+	$opts['tag_key']    = $tag_key;
+	$result = subscribe($opts, $_POST["email"], "", ""); // Return 1 if everything successfull    
 	if ($result == 1) { 
 		if ($data)  print "<p class='hatchbuck_info'>" .$data['hb_thank_you'] . "</p>";
 		else print "<p class='hatchbuck_info'>Thank for subscribing." . "</p>";
+		
+		setcookie("hatchbuck_subscribed", 1, time()+3600*24*356);
 	}
 	else {
 			print "<p class='hatchbuck_error'>" . $result . "</p>";
