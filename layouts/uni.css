@@ -476,8 +476,25 @@ footer {
   padding:5px;
 }
 
+.author-wrapper {
+  background-image: url(../images/author_bg.svg);
+  background-position: center 40px;
+  background-repeat: no-repeat;
+}
+
+.author__figure img {
+  border-radius: 50px;
+  height: 250px;
+  width: 250px;
+}
+
 .author__figcaption_title {
   color: #022a5e;
+}
+
+.author__figcaption_description {
+  color: gray;
+  font-size: 1.5rem;
 }
 
 @media (min-width: 576px) {
