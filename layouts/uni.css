@@ -476,6 +476,10 @@ footer {
   padding:5px;
 }
 
+.author__figcaption_title {
+  color: #022a5e;
+}
+
 @media (min-width: 576px) {
   .contact-us__wrapper {
     margin-left: initial;
