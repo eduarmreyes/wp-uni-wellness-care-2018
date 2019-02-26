@@ -26,7 +26,7 @@
         foreach ($post_tags as $tag ) {
           ?>
             <span class="mr-2">
-              <?= print_r($tag->name); ?>
+              <?= $tag->name; ?>
             </span>
           <?php
         }
