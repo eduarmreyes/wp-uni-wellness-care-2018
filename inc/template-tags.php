@@ -26,7 +26,8 @@ if ( ! function_exists( 'uni_wellness_care_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'uni-wellness-care' ),
+			esc_html_x( '%s Posted on %s', 'post date', 'uni-wellness-care' ),
+			get_avatar(get_the_author_meta('ID')),
 			'<a class="c-blue" href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
