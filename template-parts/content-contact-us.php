@@ -62,24 +62,6 @@
         </div>
         <div class="form-row">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1" id="input_6" name="q6_positionTitle6" size="51" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Company" aria-label="Company" aria-describedby="basic-addon1" id="input_5" name="q5_company5" size="51" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group mr-2">
-            <input type="tel" class="form-control" placeholder="Area" aria-label="Area Number" aria-describedby="basic-addon1" name="q7_phoneNumber7[area]" id="input_7_area" size="4">
-          </div>
-          <div class="form_group">
-            <input type="tel" class="form-control" placeholder="Phone Number" aria-label="Phone Number" aria-describedby="basic-addon1" name="q7_phoneNumber7[phone]" id="input_7_phone" size="14">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
             <textarea class="form-control" name="q8_message" cols="51" rows="6" placeholder="Message (optional)"></textarea>
           </div>
         </div>
