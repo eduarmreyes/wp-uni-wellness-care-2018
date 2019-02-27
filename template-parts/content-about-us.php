@@ -9,7 +9,7 @@
     </div> <!-- ./row -->
   </div> <!-- ./container -->
 
-  <div class="container mt-sm-5 mt-sm-0">
+  <div class="container  mt-sm-0">
     <div class="row">
       <div class="col-12 mx-auto text-center">
         <?= get_field('our_story_title') ?>
