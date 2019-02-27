@@ -42,7 +42,7 @@
       <div class="col-12 col-md-5 bg-blue c-clear-blue d-flex justify-content-center align-items-center text-mid pt-5 pb-5 pt-lg-0 pb-lg-0">
         <div class="container">
           <div class="row">
-            <div class="col-8 mx-auto text-center">
+            <div class="col-10 mx-auto text-center">
               <?= get_field('the_team_content') ?>
             </div>
           </div>
