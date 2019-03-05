@@ -1,6 +1,7 @@
 <?php
   $args = array(
-    'post_type' => 'post'
+    'post_type' => 'post',
+     'category__not_in' => 18 
   );
 
   $the_query = new WP_Query($args);
@@ -83,15 +84,6 @@
                   ?>
                     <a href="<?= get_permalink( get_option( 'page_for_posts' ) ) ?>">
                       <article class="d-flex align-items-center b-b-1px">
-                        <?php
-                          if (has_post_thumbnail()) {
-                        ?>
-                            <figure class="most-read__figure my-3 mr-3 w-120px">
-                              <?php the_post_thumbnail(); ?>
-                            </figure>
-                        <?php
-                          }
-                        ?>
                         <h4>
                           <?php the_title(); ?>
                         </h4>

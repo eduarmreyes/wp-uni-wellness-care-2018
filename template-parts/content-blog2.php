@@ -1,6 +1,7 @@
 <?php
   $args = array(
-    'post_type' => 'post'
+    'post_type' => 'post' ,
+     'category__not_in' => 18 
   );
 
   $the_query = new WP_Query($args);
