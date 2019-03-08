@@ -4,6 +4,8 @@
      'category__not_in' => 18 
   );
 
+ 
+
   $the_query = new WP_Query($args);
 
   $most_read_args = array(
@@ -13,6 +15,16 @@
   );
 
   $recommended_query = new WP_Query($most_read_args);
+  
+   $argsNews = array(
+	'posts_per_page' => 10,
+    'post_type' => 'post',
+    'category__in' => 18 
+  );
+  
+  $newsletter_query = new WP_Query($argsNews);
+  
+  
 ?>
 
 <div class="lp-section mt-5 text-center text-md-left">
@@ -98,6 +110,32 @@
               endif;
             ?>
           </div>
+         </div>
+         <div class="row mt-3">
+          <div class="col-sm-12">
+            <h3>Newsletter</h3>
+            <?php
+              if ($newsletter_query->have_posts()) :
+                while ($newsletter_query->have_posts()) :
+                  $newsletter_query->the_post();
+                  ?>
+                    <a href="<?= get_permalink( get_option( 'page_for_posts' ) ) ?>">
+                      <article class="d-flex align-items-center b-b-1px">
+                        <h4>
+                          <?php the_title(); ?>
+                        </h4>
+                      </article>
+                    </a>
+                  <?php
+                endwhile;
+              else:
+                ?>
+                  <h4>No newsletter posts are written yet.</h4>
+                <?php
+              endif;
+            ?>
+          </div>
+
         </div>
       </div>
     </div>
