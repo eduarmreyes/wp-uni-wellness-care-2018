@@ -47,7 +47,7 @@
             <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
               <div class="col-sm-12 col-md-6 mb-5">
                 <a class="hover-box" href="<?= get_permalink(); ?>">
-                  <div class="panel-wrap">
+                  <div class="panel-wrap fixed-height">
                     <?php the_post_thumbnail(); ?>
                     <h4 class="my-3"><?php the_title(); ?></h4>
                     <?php the_excerpt(); ?>

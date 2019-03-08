@@ -195,6 +195,11 @@ footer .footer-nav ul .sm-link-wrap .sm-link {
 
 }
 
+.fixed-height {
+	height: 480px;
+    overflow: hidden;
+}
+
 .lp-section .panel-wrap.panel-decor-one {
   background-image: url("../images/decor-one.png");
   background-position: right bottom;
