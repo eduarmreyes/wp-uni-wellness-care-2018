@@ -605,6 +605,11 @@ footer .footer-nav ul .sm-link-wrap .sm-link {
   text-underline-position: under;
 }
 
+.min-weight-33-locked {
+  min-width: 33%;
+  width: 33%;
+}
+
 @media (min-width: 576px) {
   .contact-us__wrapper {
     margin-left: initial;

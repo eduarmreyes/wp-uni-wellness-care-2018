@@ -63,38 +63,9 @@
     </div>
   </div>
 </div>
-<div class="lp-section mt-5">
-  <div class="container">
-    <div class="row mb-4">
-      <div class="col-12">
-        <?= get_field('the_team_title') ?>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-md-12 ml-auto d-block d-sm-flex justify-content-between mb-4">
-        <?php
-          $i = 0;
-          $fields = CFS()->get( 'team' );
-          foreach ( $fields as $key => $field ) { ?>
-            <div class="card mb-4 mr-4">
-              <div class="card-body d-grid d-sm-block gt-columns-150px-auto gt-rows-75px-75px-auto team-card__body">
-                <img src="<?= $field['image'] ?>" alt="Team Member Image" width='150px' class='img-fluid rounded-circle d-block m-auto'>
-                <?= $field['information'] ?>
-              </div>
-            </div> <!-- card-<?= $i ?> -->
-            <?php
-              if ($i === 2) {
-                $i = 0;
-            ?>
-              </div>
-              <div class="col-12 col-md-12 ml-auto d-block d-sm-flex justify-content-between mb-4">
-            <?php } ?>
-        <?php $i++; } ?>
-      </div>
-    </div>
-  </div>
-</div>
 
 <?php
+  get_template_part( 'template-parts/shared',  'the-team' );
+  get_template_part( 'template-parts/shared',  'advisors' );
   get_template_part( 'template-parts/shared',  'request-demo' );
 ?>
