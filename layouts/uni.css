@@ -379,6 +379,11 @@ footer .footer-nav ul .sm-link-wrap .sm-link {
   font-weight: 700;
 }
 
+.black-menu > .current-menu-item a {
+  color: #010a17 !important;
+  font-weight: 700;
+}
+
 .f-bold {
   font-weight: 600;
 }
@@ -608,6 +613,10 @@ footer .footer-nav ul .sm-link-wrap .sm-link {
 .min-weight-33-locked {
   min-width: 33%;
   width: 33%;
+}
+
+.box-shadow-0 {
+  box-shadow: none;
 }
 
 @media (min-width: 576px) {

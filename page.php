@@ -12,10 +12,16 @@
  * @package uni-wellness-care
  */
 
-	if (is_front_page()) {
-		get_header('homepage');
-	} else {
-		get_header();
+	switch (str_replace( ' ', '-', strtolower( get_the_title() ) )) {
+		case 'home':
+			get_header('homepage');
+			break;
+		case 'how-it-works':
+			get_header('how-it-works');
+			break;
+		default:
+			get_header();
+			break;
 	}
 ?>
 
