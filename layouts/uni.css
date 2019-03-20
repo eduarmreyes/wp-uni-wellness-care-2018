@@ -218,6 +218,14 @@ footer .footer-nav ul .sm-link-wrap .sm-link {
   z-index: 1;
 }
 
+.min-weight-33-locked
+  {
+	 min-width: 98%;
+    width: 98%;
+
+  }
+
+
 @media (min-width: 990px) {
   .lp-section .panel-wrap.panel-decor-three:after {
     content: "";
@@ -524,9 +532,7 @@ footer .footer-nav ul .sm-link-wrap .sm-link {
 }
 
 .content__about-us .lp-testimonial {
-  background-image: url("../images/uni-cellphones.png");
-  background-position: 50%;
-  background-size: auto;
+  background-image: none;
 }
 
 .mt-6 {
@@ -610,14 +616,15 @@ footer .footer-nav ul .sm-link-wrap .sm-link {
   text-underline-position: under;
 }
 
-.min-weight-33-locked {
-  min-width: 33%;
-  width: 33%;
-}
+
 
 .box-shadow-0 {
   box-shadow: none;
 }
+
+
+
+
 
 @media (min-width: 576px) {
   .contact-us__wrapper {
@@ -642,15 +649,26 @@ footer .footer-nav ul .sm-link-wrap .sm-link {
     margin-left: 0;
   }
 
-  .content__about-us .lp-testimonial {
-    background-image: url("../images/testimonial-bg.png");
-    background-position: left bottom;
-    background-size: 688px 300px;
-  }
+  .min-weight-33-locked {
+  min-width: 33%;
+  width: 33%;
+}
+ 
+  
+  
 }
 
 @media (min-width: 768px) {
   .justify-md-content-end {
     justify-content: flex-end;
   }
+  
+  
+
+ .content__about-us .lp-testimonial {
+    background-image: url("../images/testimonial-bg.png");
+    background-position: left bottom;
+    background-size: 688px 300px;
+  }
+ 
 }
