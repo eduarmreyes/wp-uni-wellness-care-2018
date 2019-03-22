@@ -1,7 +1,3 @@
-body {
-    margin: 0;
-}
-
 p {
     line-height: 2;
 }
@@ -30,12 +26,6 @@ p {
 .how-it-works img {
     width: 100%;
     border-radius: 5px;
-}
-
-.how-it-works .btn-container  {
-    /* position: absolute;
-    bottom: 0;
-    width: 100%; */
 }
 
 .how-it-works p {
@@ -83,7 +73,7 @@ p {
 }
 
 .cta {
-    background: url("adult-asking-blur-630839.png") no-repeat left center;
+    background: url("../images/adult-asking-blur-630839.png") no-repeat left center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

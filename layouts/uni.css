@@ -1,4 +1,5 @@
 @import url(plugins/fontawesome.min.css);
+@import url(how-it-works.css);
 
 .text-normal {
   font-size: 1rem;
@@ -218,31 +219,6 @@ footer .footer-nav ul .sm-link-wrap .sm-link {
   z-index: 1;
 }
 
-.min-weight-33-locked
-  {
-	 min-width: 98%;
-    width: 98%;
-
-  }
-
-
-@media (min-width: 990px) {
-  .lp-section .panel-wrap.panel-decor-three:after {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 170px;
-    height: 75px;
-    margin-top: -75px;
-    background-image: url("../images/decor-three.png");
-    background-position: right bottom;
-    background-size: 170px 75px;
-    background-repeat: no-repeat;
-  }
-}
-
 .lp-section .panel-wrap p {
   margin-bottom: 5px;
   font-size: 1.15rem;
@@ -458,7 +434,8 @@ footer .footer-nav ul .sm-link-wrap .sm-link {
   color: #022a5e;
 }
 
-.content__about-us::after {
+.content__about-us::after,
+.content__how-it-works::after {
   content: none;
 }
 
@@ -616,15 +593,31 @@ footer .footer-nav ul .sm-link-wrap .sm-link {
   text-underline-position: under;
 }
 
-
-
 .box-shadow-0 {
   box-shadow: none;
 }
 
+.min-weight-33-locked {
+  min-width: 100%;
+  width: 100%;
+}
 
-
-
+@media (min-width: 990px) {
+  .lp-section .panel-wrap.panel-decor-three:after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 170px;
+    height: 75px;
+    margin-top: -75px;
+    background-image: url("../images/decor-three.png");
+    background-position: right bottom;
+    background-size: 170px 75px;
+    background-repeat: no-repeat;
+  }
+}
 
 @media (min-width: 576px) {
   .contact-us__wrapper {
@@ -648,22 +641,17 @@ footer .footer-nav ul .sm-link-wrap .sm-link {
   .team-card__body h3 {
     margin-left: 0;
   }
-
-  .min-weight-33-locked {
-  min-width: 33%;
-  width: 33%;
-}
- 
-  
-  
 }
 
 @media (min-width: 768px) {
   .justify-md-content-end {
     justify-content: flex-end;
   }
-  
-  
+
+  .min-weight-33-locked {
+    min-width: 33%;
+    width: 33%;
+  }
 
  .content__about-us .lp-testimonial {
     background-image: url("../images/testimonial-bg.png");

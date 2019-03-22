@@ -89,17 +89,19 @@
       wp_nav_menu($menu_args);
     ?>
   </div>
-  <div class="lp-hero">
+  <div class="home">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 d-flex flex-column  justify-content-center align-items-center">
+        <div class="col-sm-12 col-md-6 mt-5 pt-5 pb-5 mb-5">
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <?php the_content(); ?>
             <?= get_field('header_cta'); ?>
           <?php endwhile; endif; ?>
-        </div>
-        <div class="col-md-6">
-          <img class="bg-hero" src="<?=get_template_directory_uri();?>/images/home-how-it-works.png" />
+          <div class="row mt-5 pt-5">
+            <div class="col-md-5">
+              <a href="<?= get_site_url() . "/index.php/" . get_page_uri("88") ?>" class="btn btn-primary "><strong>Request a demo</strong></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
