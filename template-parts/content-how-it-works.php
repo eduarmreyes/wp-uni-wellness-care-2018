@@ -10,7 +10,7 @@
         </p>
         <div class="btn-container row mt-5">
           <div class="col-md-6">
-            <a href="<?= get_site_url() . "/index.php/" . get_page_uri("83") ?>" class="btn btn-lg btn-outline-primary">
+            <a href="<?= get_site_url() . "/index.php/" . get_page_uri("164") ?>" class="btn btn-lg btn-outline-primary">
               <strong>About us</strong>
             </a>
           </div>
@@ -40,7 +40,7 @@
         </p>
         <div class="btn-container row mt-5">
           <div class="col-md-6">
-            <a href="<?= get_site_url() . "/index.php/" . get_page_uri("88") ?>" class="btn btn-lg btn-outline-primary">
+            <a href="<?= get_site_url() . "/index.php/" . get_page_uri("168") ?>" class="btn btn-lg btn-outline-primary">
               <strong>Implementing telehealth</strong>
             </a>
           </div>
@@ -75,7 +75,7 @@
         </p>
         <div class="row mt-5">
           <div class="col-md-6">
-            <a href="<?= get_site_url() . "/index.php/" . get_page_uri("88") ?>" class="btn btn-lg btn-outline-primary">
+            <a href="<?= get_site_url() . "/index.php/" . get_page_uri("168") ?>" class="btn btn-lg btn-outline-primary">
               <strong>Request a demo</strong>
             </a>
           </div>
@@ -95,7 +95,7 @@
         </p>
         <div class="btn-container row mt-5">
           <div class="col-md-6">
-            <a href="<?= get_site_url() . "/index.php/" . get_page_uri("88") ?>" class="btn btn-lg btn-outline-primary">
+            <a href="<?= get_site_url() . "/index.php/" . get_page_uri("168") ?>" class="btn btn-lg btn-outline-primary">
               <strong>Learn more</strong>
             </a>
           </div>
@@ -170,7 +170,7 @@
           <p class="text-large mt-3 font-weight-light">
             An online mental health platform branded uniquely for your school or organization. Find out more below.
           </p>
-          <a href="<?= get_site_url() . "/index.php/" . get_page_uri("88") ?>" class="btn btn-lg btn-outline-light mt-5">
+          <a href="<?= get_site_url() . "/index.php/" . get_page_uri("168") ?>" class="btn btn-lg btn-outline-light mt-5">
             <strong>Request a demo</strong>
           </a>
         </div>
