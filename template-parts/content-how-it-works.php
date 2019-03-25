@@ -53,71 +53,50 @@
       ?>
   </div>
 </div>
-
 <div class="benefits">
   <div class="container">
     <div class="row">
-      <h1 class="text-large">
-        <strong>A platform that fills gaps in
-          college mental health care.</strong>
-      </h1>
-      <p class="text-large mt-3 m-b-1rem font-weight-light">
-        Branded uniquely for your school or organization.
-      </p>
+      <div class="text-large text-center">
+        <?= get_field('benefits_title') ?>
+      </div>
+      <div class="text-large mt-3 m-b-1rem font-weight-light m-auto">
+        <?= get_field('benefits_text_content') ?>
+      </div>
     </div>
     <div class="row justify-content-between mt-5 pt-5">
-      <div class="col-12 col-md-4 mb-md-0 mb-5">
-        <div class="col-11 benefits-column">
-          <img src="<?= get_template_directory_uri() ?>/images/proffessor.png" class="" alt="">
-          <h2 class="font-weight-normal mt-4">
-            Meet the growing demand for services.
-          </h2>
-          <p class="font-weight-light">
-            Maintain continuity of care by allowing students to connect with their counselors from home, freeing space for more students to access services on campus.
-          </p>
-        </div>
-      </div>
-      <div class="col-12 col-md-4 mb-md-0 mb-5">
-        <div class="col-11 benefits-column">
-          <img src="<?= get_template_directory_uri() ?>/images/proffessor.png" class="" alt="">
-          <h2 class="font-weight-normal mt-4">
-            Offer extended hours visits.
-          </h2>
-          <p class="font-weight-light">
-            Allow your counselors to meet with students after-hours. They can hop online from the comfort of their own homes.
-          </p>
-        </div>
-      </div>
-      <div class="col-12 col-md-4">
-        <div class="col-11 benefits-column">
-          <img src="<?= get_template_directory_uri() ?>/images/proffessor.png" class="" alt="">
-          <h2 class="font-weight-normal mt-4">
-            Bring in outside specialists as needed.
-          </h2>
-          <p class="font-weight-light">
-            Enable your students to access specialty care for concerns like eating disorders and substance use.
-          </p>
-        </div>
-      </div>
+      <?php
+        $fields = CFS()->get( 'benefits' );
+        foreach ( $fields as $field ) {
+          ?>
+          <div class="col-12 col-md-4 mb-md-0 mb-5">
+            <div class="col-11 benefits-column">
+              <img src="<?= $field['icon'] ?>" alt="">
+              <div class="font-weight-normal mt-4">
+                <?= $field['title'] ?>
+              </div>
+              <div class="font-weight-light">
+                <?= $field['content'] ?>
+              </div>
+            </div>
+          </div>
+          <?php
+        }
+      ?>
     </div>
   </div>
 </div>
-
-
 <div class="cta">
   <div class="container">
     <div class="row">
       <div class="overlay">
         <div class="col-12 text-center">
-          <h1 class="text-large">
-            Ready to get started?
-          </h1>
-          <p class="text-large mt-3 font-weight-light">
-            An online mental health platform branded uniquely for your school or organization. Find out more below.
-          </p>
-          <a href="<?= get_site_url() . "/index.php/" . get_page_uri("168") ?>" class="btn btn-lg btn-outline-light mt-5">
-            <strong>Request a demo</strong>
-          </a>
+          <div class="text-large text-center">
+            <?= get_field('cta_title') ?>
+          </div>
+          <div class="text-large mt-3 font-weight-light">
+            <?= get_field('cta_text_content') ?>
+          </div>
+          <a href="<?= get_field('cta_link')["url"] ?>" class="btn btn-lg btn-outline-light mt-5"><strong><?= get_field('cta_link')['title']?></strong></a>
         </div>
       </div>
     </div>
