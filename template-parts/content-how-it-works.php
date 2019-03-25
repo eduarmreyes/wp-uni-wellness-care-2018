@@ -1,111 +1,56 @@
 <div class="how-it-works">
   <div class="container">
-    <div class="row flex-wrap-reverse pt-5 pb-5">
-      <div class="col-sm-12 col-md-5 mt-md-5 mb-md-5">
-        <h1 class="">
-          Start by meeting with our team.
-        </h1>
-        <p class="text-large mt-2 m-b-1rem font-weight-light">
-          We’ll configure your online mental health platform and brand it uniquely to your school or organization.
-        </p>
-        <div class="btn-container row mt-5">
-          <div class="col-md-6">
-            <a href="<?= get_site_url() . "/index.php/" . get_page_uri("164") ?>" class="btn btn-lg btn-outline-primary">
-              <strong>About us</strong>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-      <div class="col-sm-12 col-md-6 mt-5 mb-5">
-        <img src="<?= get_template_directory_uri() ?>/images/screen.jpg" alt="" class="shadow-1">
-      </div>
-    </div>
-    <div class="row pt-5 pb-5">
-      <div class="col-sm-12 col-md-6 mt-5 mb-5">
-        <img src="<?= get_template_directory_uri() ?>/images/uniwellness-1.png" alt="" class="shadow-1">
-      </div>
-      <div class="col-md-1"></div>
-      <div class="col-sm-12 col-md-5 mt-md-5 mb-md-5">
-        <h1 class="">
-          Onboarding to the platform.
-        </h1>
-        <p class="text-large mt-2 m-b-1rem font-weight-light">
-          We’ll gather important information, like
-          student body size, average number of
-          appointments per day, and intake flow.
-          This helps us mold the platform to the way
-          that your school approaches student
-          health.          
-        </p>
-        <div class="btn-container row mt-5">
-          <div class="col-md-6">
-            <a href="<?= get_site_url() . "/index.php/" . get_page_uri("168") ?>" class="btn btn-lg btn-outline-primary">
-              <strong>Implementing telehealth</strong>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row flex-wrap-reverse pt-5 pb-5">
-      <div class="col-sm-12 col-md-5 mt-md-5 mb-md-5">
-        <h1 class="">
-          Gain insights into behavior.
-        </h1>
-        <p class="text-large mt-4 m-b-1rem font-weight-light">
-          Enable students to see their counselors from the comfort and privacy of their residence halls. They can schedule and make it to their appointments without leaving their rooms.
-        </p>
-      </div>
-      <div class="col-md-1"></div>
-      <div class="col-sm-12 col-md-6 mt-5 mb-5">
-        <img src="<?= get_template_directory_uri() ?>/images/mock-2.png" alt="">
-      </div>
-    </div>
-    <div class="row pt-5 pb-5">
-      <div class="col-sm-12 col-md-6 mt-5 mb-5">
-        <img src="<?= get_template_directory_uri() ?>/images/mock-1.png" alt="">
-      </div>
-      <div class="col-md-1"></div>
-      <div class="col-sm-12 col-md-5 mt-md-5 mb-md-5">
-        <h1 class="">
-          Allow your counselors to manage their appointments and waitlists.
-        </h1>
-        <p class="text-large mt-4 m-b-1rem font-weight-light">
-          Counselors can easily keep track of their appointments, send follow-up messages, share files securely, and take private notes during sessions.         
-        </p>
-        <div class="row mt-5">
-          <div class="col-md-6">
-            <a href="<?= get_site_url() . "/index.php/" . get_page_uri("168") ?>" class="btn btn-lg btn-outline-primary">
-              <strong>Request a demo</strong>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row flex-wrap-reverse pt-5 pb-5">
-      <div class="col-sm-12 col-md-5 mt-md-5 mb-md-5">
-        <h1 class="">
-          Connecting students every step of the way.
-        </h1>
-        <p class="text-large mt-4 m-b-1rem font-weight-light">
-          Increase your students’ access to mental
-          health care with more ways to
-          communicate and more flexibility to meet
-          their needs.
-        </p>
-        <div class="btn-container row mt-5">
-          <div class="col-md-6">
-            <a href="<?= get_site_url() . "/index.php/" . get_page_uri("168") ?>" class="btn btn-lg btn-outline-primary">
-              <strong>Learn more</strong>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-      <div class="col-sm-12 col-md-6 mt-5 mb-5">
-        <img src="<?= get_template_directory_uri() ?>/images/mock-3.png" alt="">
-      </div>
-    </div>
+      <?php
+        $fields = CFS()->get( 'how_it_works_content' );
+        foreach ( $fields as $field ) {
+          if ($field['left_or_right']['right'] == 'Right Image') { ?>
+            <div class="row flex-wrap-reverse pt-5 pb-5">
+              <div class="col-sm-12 col-md-5 mt-md-5 mb-md-5">
+                <?= $field['title'] ?>
+                <div class="text-large mt-2 m-b-1rem font-weight-light">
+                  <?= $field['content'] ?>
+                </div>
+                <div class="btn-container row mt-5">
+                  <div class="col-md-6">
+                    <a href="<?= $field['cta']['url'] ?>" class="btn btn-lg btn-outline-primary" target="<?= $field['cta']['target'] ?>">
+                      <strong><?= $field['cta']['text'] ?></strong>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-sm-12 col-md-6 mt-5 mb-5">
+                <img src="<?= $field['image'] ?>" alt="" class='img-fluid shadow-1'>
+              </div>
+            </div>
+          <?php
+          } else {
+          ?>
+            <div class="row pt-5 pb-5">
+              <div class="col-sm-12 col-md-6 mt-5 mb-5">
+                <img src="<?= $field['image'] ?>" alt="" class='img-fluid shadow-1'>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-sm-12 col-md-5 mt-md-5 mb-md-5">
+                <?= $field['title'] ?>
+                <div class="text-large mt-2 m-b-1rem font-weight-light">
+                  <?= $field['content'] ?>
+                </div>
+                <div class="btn-container row mt-5">
+                  <div class="col-md-6">
+                    <a href="<?= $field['cta']['url'] ?>" class="btn btn-lg btn-outline-primary" target="<?= $field['cta']['target'] ?>">
+                      <strong><?= $field['cta']['text'] ?></strong>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php
+          }
+          ?>
+        <?php
+        }
+      ?>
   </div>
 </div>
 

@@ -45,32 +45,39 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'UA-132533479-1');
+    gtag('config', 'UA-132533479-1', { 'optimize_id': 'GTM-TJHZSLB'});
   </script>
 </head>
 
 <body <?php body_class(); ?>>
-	<div class="nav-header border-0 box-shadow-0">
-		<a href="<?= get_site_url(); ?>" class="my-0 mr-md-auto text-dark text-large">
-			uni <strong>wellness</strong>
+<div class="nav-header">
+		<a href="<?= get_site_url(); ?>" class="my-0 mr-md-auto">
+			<img class="brand-header" src="<?=get_template_directory_uri();?>/images/uni-brand-color.png" />
 		</a>
 		<nav class="my-md-0 mr-md-2 d-none d-sm-flex">
       <?php
         $menu_args = array(
           'container' => false,
           'menu' => 'landing navigation',
-          'menu_class' => 'd-flex align-items-center m-0 p-0 list-unstyled black-menu'
+          'menu_class' => 'd-flex align-items-center m-0 p-0 list-unstyled'
         );
         wp_nav_menu($menu_args);
       ?>
+			<?php
+				$menu_options = wp_get_nav_menu_items('landing social navigation');
+				foreach ((array) $menu_options as $menu) {
+					?>
+					<a class="px-2 py-1 sm-link" href="<?= $menu->url; ?>" target="<?= $menu->target; ?>"><i class="fab fa-<?= $menu->title; ?>"></i></a>
+					<?php
+				}
+				?>
 		</nav>
     <div class="contact-us__wrapper">
-      <a class="btn btn-lg btn-primary f-bold" href="https://example.com">Request a demo</a>
       <?php
-        $request_demo = wp_get_nav_menu_items('request a demo');
-        foreach ((array) $request_demo as $menu) {
+        $contact_us_menu = wp_get_nav_menu_items('contact us');
+        foreach ((array) $contact_us_menu as $menu) {
           ?>
-          <!-- <a class="btn btn-large btn-primary f-bold" href="https://example.com">Request a demo</a> -->
+          <a class="<?= implode(" ", $menu->classes); ?>" href="<?= $menu->url; ?>"><?= $menu->title; ?></a>
           <?php
         }
       ?>
@@ -89,17 +96,17 @@
       wp_nav_menu($menu_args);
     ?>
   </div>
+
   <div class="home">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-6 mt-5 pt-5 pb-5 mb-5">
           <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
             <?php the_content(); ?>
-            <?= get_field('header_cta'); ?>
           <?php endwhile; endif; ?>
           <div class="row mt-5 pt-5">
             <div class="col-md-5">
-              <a href="<?= get_site_url() . "/index.php/" . get_page_uri("88") ?>" class="btn btn-primary "><strong>Request a demo</strong></a>
+              <a href="<?= get_field('header_cta')["url"] ?>" class="btn btn-primary "><strong><?= get_field('header_cta')['title']?></strong></a>
             </div>
           </div>
         </div>
