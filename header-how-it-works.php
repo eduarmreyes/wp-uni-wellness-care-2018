@@ -97,7 +97,7 @@
     ?>
   </div>
 
-  <div class="home">
+  <div class="content__how-it-works">
     <div class="container">
       <div class="row">
         <div class="col-sm-12 col-md-6 mt-5 pt-5 pb-5 mb-5">
