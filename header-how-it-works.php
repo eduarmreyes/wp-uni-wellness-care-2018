@@ -110,6 +110,9 @@
             </div>
           </div>
         </div>
+        <div class="col-sm-12 col-md-6 mt-5 pt-5 pb-5 mb-5 d-flex align-items-center">
+        <?php the_post_thumbnail('medium-large', ['class' => 'img-fluid']); ?>
+        </div>
       </div>
     </div>
   </div>

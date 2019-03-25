@@ -12,9 +12,15 @@
                 </div>
                 <div class="btn-container row mt-5">
                   <div class="col-md-6">
-                    <a href="<?= $field['cta']['url'] ?>" class="btn btn-lg btn-outline-primary" target="<?= $field['cta']['target'] ?>">
-                      <strong><?= $field['cta']['text'] ?></strong>
-                    </a>
+                    <?php
+                      if ($field['cta']['url']) {
+                        ?>
+                          <a href="<?= $field['cta']['url'] ?>" class="btn btn-lg btn-outline-primary" target="<?= $field['cta']['target'] ?>">
+                            <strong><?= $field['cta']['text'] ?></strong>
+                          </a>
+                        <?php
+                      }
+                    ?>
                   </div>
                 </div>
               </div>
@@ -38,9 +44,15 @@
                 </div>
                 <div class="btn-container row mt-5">
                   <div class="col-md-6">
-                    <a href="<?= $field['cta']['url'] ?>" class="btn btn-lg btn-outline-primary" target="<?= $field['cta']['target'] ?>">
-                      <strong><?= $field['cta']['text'] ?></strong>
-                    </a>
+                    <?php
+                      if ($field['cta']) {
+                        ?>
+                          <a href="<?= $field['cta']['url'] ?>" class="btn btn-lg btn-outline-primary" target="<?= $field['cta']['target'] ?>">
+                            <strong><?= $field['cta']['text'] ?></strong>
+                          </a>
+                        <?php
+                      }
+                    ?>
                   </div>
                 </div>
               </div>
@@ -55,8 +67,8 @@
 </div>
 <div class="benefits">
   <div class="container">
-    <div class="row">
-      <div class="text-large text-center">
+    <div class="row flex-column">
+      <div class="text-center">
         <?= get_field('benefits_title') ?>
       </div>
       <div class="text-large mt-3 m-b-1rem font-weight-light m-auto">
@@ -90,10 +102,10 @@
     <div class="row">
       <div class="overlay">
         <div class="col-12 text-center">
-          <div class="text-large text-center">
+          <div class="text-center">
             <?= get_field('cta_title') ?>
           </div>
-          <div class="text-large mt-3 font-weight-light">
+          <div class="mt-3 font-weight-light">
             <?= get_field('cta_text_content') ?>
           </div>
           <a href="<?= get_field('cta_link')["url"] ?>" class="btn btn-lg btn-outline-light mt-5"><strong><?= get_field('cta_link')['title']?></strong></a>
