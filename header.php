@@ -50,8 +50,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<div class="nav-header">
-		<a href="<?= get_site_url(); ?>" class="my-0 mr-md-auto">
+	<div class="nav-header border-0 box-shadow-0">
+		<a href="<?= get_site_url(); ?>" class="my-0 mr-md-auto text-dark text-large">
 			<img class="brand-header" src="<?=get_template_directory_uri();?>/images/uni-brand-color.png" />
 		</a>
 		<nav class="my-md-0 mr-md-2 d-none d-sm-flex">

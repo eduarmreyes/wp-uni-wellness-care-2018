@@ -50,8 +50,8 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div class="nav-header">
-		<a href="<?= get_site_url(); ?>" class="my-0 mr-md-auto">
+	<div class="nav-header">
+		<a href="<?= get_site_url(); ?>" class="my-0 mr-md-auto text-dark text-large">
 			<img class="brand-header" src="<?=get_template_directory_uri();?>/images/uni-brand-color.png" />
 		</a>
 		<nav class="my-md-0 mr-md-2 d-none d-sm-flex">
@@ -62,7 +62,7 @@
           'menu_class' => 'd-flex align-items-center m-0 p-0 list-unstyled'
         );
         wp_nav_menu($menu_args);
-      ?>
+         ?>
 			<?php
 				$menu_options = wp_get_nav_menu_items('landing social navigation');
 				foreach ((array) $menu_options as $menu) {
@@ -73,14 +73,14 @@
 				?>
 		</nav>
     <div class="contact-us__wrapper">
-      <?php
+        <?php
         $contact_us_menu = wp_get_nav_menu_items('contact us');
         foreach ((array) $contact_us_menu as $menu) {
           ?>
           <a class="<?= implode(" ", $menu->classes); ?>" href="<?= $menu->url; ?>"><?= $menu->title; ?></a>
           <?php
         }
-      ?>
+      ?>      
       <button class="navbar-toggler d-inline-block d-sm-none" data-toggle="collapse" data-target="#navbarHeader">
         <span class="navbar-toggler-icon"></span>
       </button>
