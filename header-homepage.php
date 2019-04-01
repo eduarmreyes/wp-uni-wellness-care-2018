@@ -105,7 +105,7 @@
           <?php endwhile; endif; ?>
         </div>
         <div class="col-md-6">
-          <img class="bg-hero" src="<?=get_template_directory_uri();?>/images/uni_header_phone.png" />
+          <img class="bg-hero" src="<?=get_the_post_thumbnail_url();?>" />
         </div>
       </div>
     </div>
