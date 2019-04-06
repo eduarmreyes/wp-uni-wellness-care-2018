@@ -12,19 +12,21 @@
           $fields = CFS()->get( 'team' );
           foreach ( $fields as $key => $field ) { ?>
             <div class="card mb-4 min-weight-33-locked <?= ($i === 1) ? "ml-md-4 mr-md-4" : "" ?>">
-              <div class="card-body d-grid d-sm-block gt-columns-150px-auto gt-rows-75px-75px-auto team-card__body">
+              <div class="card-body d-sm-block gt-columns-150px-auto gt-rows-75px-75px-auto team-card__body">
                 <img src="<?= $field['image'] ?>" alt="Team Member Image" width='150px' class='img-fluid rounded-circle d-block m-auto'>
-                <?= (strlen($field['information']) > 439) ?
-                  substr($field['information'], 0, 440) .
-                  "<span class='hide-content'></span><span class='card__excerpt__show'>. . .</span>" .
-                  "<br><br><button
-                    class='btn btn-primary btn-read-more cursor-pointer'
-                    data-next-text-part='" . substr($field['information'], 439, strlen($field['information'])) . "'
-                    data-state='show'
-                  >
-                    Read more
-                  </button>" :
-                  $field['information'] ?>
+                <div class="card__content">
+                  <?= (strlen($field['information']) > 439) ?
+                    substr($field['information'], 0, 440) .
+                    "<span class='hide-content'></span><span class='card__excerpt__show'>. . .</span>" .
+                    "<br><br><button
+                      class='btn btn-primary btn-read-more cursor-pointer'
+                      data-next-text-part='" . substr($field['information'], 439, strlen($field['information'])) . "'
+                      data-state='show'
+                    >
+                      Read more
+                    </button>" :
+                    $field['information'] ?>
+                </div>
               </div>
             </div> <!-- card-<?= $i ?> -->
             <?php
@@ -48,13 +50,13 @@
     jQuery('.btn-read-more').on('click', function() {
       if (jQuery(this).data('state') === "show") {
         jQuery(this).data('state', 'hide');
-        jQuery('.hide-content').html(jQuery(this).data('next-text-part'));
-        jQuery('.card__excerpt__show').hide();
+        jQuery(this).parent().find('.hide-content').html(jQuery(this).data('next-text-part'));
+        jQuery(this).parent().find('.card__excerpt__show').hide();
         jQuery(this).text('Read less');
       } else {
         jQuery(this).data('state', 'show');
-        jQuery('.card__excerpt__show').show();
-        jQuery('.hide-content').html('');
+        jQuery(this).parent().find('.card__excerpt__show').show();
+        jQuery(this).parent().find('.hide-content').html('');
         jQuery(this).text('Read more');
       }
     });
