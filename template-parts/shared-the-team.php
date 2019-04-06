@@ -18,7 +18,7 @@
                   <?= (strlen(htmlentities($field['information'])) > 439) ?
                     substr($field['information'], 0, 440) .
                     "<span class='hide-content'></span><span class='card__excerpt__show'>. . .</span>" .
-                    "<br><br><button
+                    "<br class='br__show'><br class='br__show'><button
                       class='btn btn-primary btn-read-more cursor-pointer'
                       data-next-text-part='" . substr(htmlentities($field['information']), 439, strlen(htmlentities($field['information']))) . "'
                       data-state='show'
@@ -51,10 +51,12 @@
       if (jQuery(this).data('state') === "show") {
         jQuery(this).data('state', 'hide');
         jQuery(this).parent().find('.hide-content').html(jQuery(this).data('next-text-part'));
+        jQuery(this).parent().find('.br__show').hide();
         jQuery(this).parent().find('.card__excerpt__show').hide();
         jQuery(this).text('Read less');
       } else {
         jQuery(this).data('state', 'show');
+        jQuery(this).parent().find('.br__show').show();
         jQuery(this).parent().find('.card__excerpt__show').show();
         jQuery(this).parent().find('.hide-content').html('');
         jQuery(this).text('Read more');

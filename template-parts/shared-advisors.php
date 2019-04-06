@@ -52,10 +52,12 @@
       if (jQuery(this).data('state') === "show") {
         jQuery(this).data('state', 'hide');
         jQuery(this).parent().find('.hide-content').html(jQuery(this).data('next-text-part'));
+        jQuery(this).parent().find('.br__show').hide();
         jQuery(this).parent().find('.card__excerpt__show').hide();
         jQuery(this).text('Read less');
       } else {
         jQuery(this).data('state', 'show');
+        jQuery(this).parent().find('.br__show').show();
         jQuery(this).parent().find('.card__excerpt__show').show();
         jQuery(this).parent().find('.hide-content').html('');
         jQuery(this).text('Read more');
