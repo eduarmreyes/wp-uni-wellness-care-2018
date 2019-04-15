@@ -15,17 +15,30 @@
               <div class="card-body d-sm-block gt-columns-150px-auto gt-rows-75px-75px-auto team-card__body">
                 <img src="<?= $field['image'] ?>" alt="Team Member Image" width='150px' class='img-fluid rounded-circle d-block m-auto'>
                 <div class="card__content">
-                  <?= (strlen(htmlentities($field['information'])) > 439) ?
-                    substr($field['information'], 0, 440) .
-                    "<span class='hide-content'></span><span class='card__excerpt__show'>. . .</span>" .
-                    "<br class='br__show'><br class='br__show'><button
-                      class='btn btn-primary btn-read-more cursor-pointer'
-                      data-next-text-part='" . substr(htmlentities($field['information']), 439, strlen(htmlentities($field['information']))) . "'
-                      data-state='show'
-                    >
-                      Read more
-                    </button>" :
-                    $field['information']; ?>
+                  <?php
+                    if ($field['excerpt']) {
+                      ?>
+                      <div class="card__content_excerpt d-block">
+                        <?= $field['excerpt'] ?>
+                      </div>
+                      <div class="card__content_full d-none">
+                        <?= $field['information'] ?>
+                      </div>
+                      <button
+                        class='btn btn-primary btn-read-more cursor-pointer'
+                        data-state='show'
+                      >
+                        Read more
+                      </button>
+                      <?php
+                    } else {
+                      ?>
+                      <div class="card__content_full">
+                        <?= $field['information'] ?>
+                      </div>
+                      <?php
+                    }
+                  ?>
                 </div> <!-- .card-content -->
               </div> <!-- .card-body -->
             </div> <!-- card-<?= $i ?> -->
@@ -50,15 +63,13 @@
     jQuery('.btn-read-more').on('click', function() {
       if (jQuery(this).data('state') === "show") {
         jQuery(this).data('state', 'hide');
-        jQuery(this).parent().find('.hide-content').html(jQuery(this).data('next-text-part'));
-        jQuery(this).parent().find('.br__show').hide();
-        jQuery(this).parent().find('.card__excerpt__show').hide();
+        jQuery(this).parent().find('.card__content_excerpt').toggleClass('d-block').toggleClass('d-none');
+        jQuery(this).parent().find('.card__content_full').toggleClass('d-none').toggleClass('d-block');
         jQuery(this).text('Read less');
       } else {
         jQuery(this).data('state', 'show');
-        jQuery(this).parent().find('.br__show').show();
-        jQuery(this).parent().find('.card__excerpt__show').show();
-        jQuery(this).parent().find('.hide-content').html('');
+        jQuery(this).parent().find('.card__content_excerpt').toggleClass('d-none').toggleClass('d-block');
+        jQuery(this).parent().find('.card__content_full').toggleClass('d-block').toggleClass('d-none');
         jQuery(this).text('Read more');
       }
     });
