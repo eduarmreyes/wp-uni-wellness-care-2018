@@ -16,7 +16,10 @@
 		case 'home':
 			get_header('homepage');
 			break;
-		case 'how-it-works':
+    case 'student-how-it-works':
+      get_header('student-how-it-works');
+      break;
+    case 'how-it-works':
 			get_header('how-it-works');
 			break;
 		default:
