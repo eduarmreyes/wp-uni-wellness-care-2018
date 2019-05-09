@@ -65,7 +65,7 @@
             <input type="tel" class="form-control" placeholder="Area" aria-label="Area Number" aria-describedby="basic-addon1" name="q9_phoneNumber9[area]" id="input_9_area" size="4">
           </div>
           <div class="form_group">
-            <input type="tel" class="form-control" placeholder="Phone Number" aria-label="Phone Number" aria-describedby="basic-addon1" name="q9_phoneNumber9[phone]" id="input_9_phone" size="40">
+            <input type="tel" class="form-control" placeholder="Phone Number (optional)" aria-label="Phone Number" aria-describedby="basic-addon1" name="q9_phoneNumber9[phone]" id="input_9_phone" size="40">
           </div>
         </div>
         <div class="form-row">
